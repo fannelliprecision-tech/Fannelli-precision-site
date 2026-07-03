@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Services — Fanelli Precision</title>
+<meta name="description" content="Bathroom and kitchen remodels, restoration and repair, tile and finish work — West Shore PA.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --cream: #fef6e4; --ink: #0a0d06; --ink-green: #12210c;
+    --forest: #255124; --crimson: #b40e0e; --cream-dim: #f5ecd6; --max: 1180px;
+  }
+  *{ box-sizing: border-box; margin:0; padding:0; }
+  html{ scroll-behavior: smooth; }
+  body{ background: var(--cream); color: var(--ink); font-family:'Inter',-apple-system,sans-serif; line-height:1.6; -webkit-font-smoothing: antialiased; }
+  a{ color: inherit; text-decoration: none; }
+  .wrap{ max-width: var(--max); margin:0 auto; padding: 0 32px; }
+
+  header{ position:sticky; top:0; z-index:50; background:rgba(254,246,228,0.92); backdrop-filter:blur(6px); border-bottom:1px solid rgba(10,13,6,0.08); }
+  .header-inner{ display:flex; align-items:center; justify-content:space-between; padding:22px 0; }
+  .wordmark{ font-family:'Fraunces',serif; font-weight:500; font-size:19px; }
+  nav{ display:flex; align-items:center; gap:36px; }
+  nav a.nav-link{ font-size:13px; letter-spacing:0.08em; text-transform:uppercase; color:var(--ink-green); transition:color .2s; }
+  nav a.nav-link:hover{ color:var(--forest); }
+  nav a.nav-link.active{ color: var(--forest); }
+  .btn{ display:inline-block; padding:12px 26px; background:var(--forest); color:var(--cream); font-size:13px; letter-spacing:.06em; text-transform:uppercase; border-radius:2px; transition:.25s; white-space:nowrap; }
+  .btn:hover{ background:var(--ink-green); transform:translateY(-1px); }
+
+  .page-hero{ padding:72px 0 48px; }
+  .eyebrow{ font-size:12px; letter-spacing:.16em; text-transform:uppercase; color:var(--forest); margin-bottom:18px; display:flex; align-items:center; gap:10px; }
+  .eyebrow::before{ content:''; width:28px; height:1px; background:var(--forest); }
+  h1.page-title{ font-family:'Fraunces',serif; font-weight:400; font-size:clamp(38px,5.5vw,60px); line-height:1.02; max-width:640px; margin-bottom:18px; }
+  .page-sub{ font-size:16px; color:var(--ink-green); max-width:460px; opacity:.85; }
+
+  .services-list{ padding-bottom: 40px; }
+  .service-row{ display:grid; grid-template-columns: 90px 1fr 1fr; gap:40px; padding:44px 0; border-top:1px solid rgba(10,13,6,0.1); align-items:start; }
+  .service-row:last-child{ border-bottom:1px solid rgba(10,13,6,0.1); }
+  .service-num{ font-family:'Fraunces',serif; font-style:italic; font-size:15px; color:var(--forest); padding-top:4px; }
+  .service-name{ font-family:'Fraunces',serif; font-size:28px; font-weight:400; }
+  .service-desc{ font-size:15px; color:var(--ink-green); opacity:.85; }
+  .service-desc ul{ margin-top:14px; padding-left:18px; }
+  .service-desc li{ margin-bottom:6px; }
+
+  .cta-strip{ background:var(--ink-green); color:var(--cream); padding:64px 0; margin-top:40px; }
+  .cta-strip-inner{ display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:24px; }
+  .cta-strip h3{ font-family:'Fraunces',serif; font-weight:400; font-size:28px; }
+  .btn-cream{ background:var(--cream); color:var(--ink-green); padding:14px 26px; font-size:13px; letter-spacing:.06em; text-transform:uppercase; border-radius:2px; }
+  .btn-cream:hover{ background:#fff; }
+
+  footer{ padding:56px 0 40px; }
+  .footer-bottom{ display:flex; justify-content:space-between; font-size:12px; color:var(--ink-green); opacity:.55; flex-wrap:wrap; gap:10px; padding-top:28px; border-top:1px solid rgba(10,13,6,0.1); }
+  .footer-wordmark{ font-family:'Fraunces',serif; font-size:19px; margin-bottom:6px; }
+
+  @media (max-width:860px){
+    nav{ display:none; }
+    .service-row{ grid-template-columns: 1fr; gap:12px; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap header-inner">
+    <a class="wordmark" href="index.html">Fanelli Precision</a>
+    <nav>
+      <a class="nav-link active" href="services.html">Services</a>
+      <a class="nav-link" href="portfolio.html">Portfolio</a>
+      <a class="nav-link" href="about.html">About</a>
+      <a class="btn" href="quote.html">Request a Quote</a>
+    </nav>
+  </div>
+</header>
+
+<section class="page-hero">
+  <div class="wrap">
+    <div class="eyebrow">What we do</div>
+    <h1 class="page-title">Renovation and restoration, handled to a standard.</h1>
+    <p class="page-sub">Every job is scoped, quoted fixed-price, and scheduled before demo begins — no mid-project surprises, no absorbed hidden conditions.</p>
+  </div>
+</section>
+
+<section class="services-list">
+  <div class="wrap">
+
+    <div class="service-row">
+      <div class="service-num">01</div>
+      <div class="service-name">Bathroom &amp; Kitchen Remodels</div>
+      <div class="service-desc">
+        Full gut renovations from demo to final finish — tile, fixtures, cabinetry, and finish carpentry.
+        <ul>
+          <li>Fixed-price quoting, tile and fixtures locked before demo starts</li>
+          <li>Full material list finalized upfront — no repeat supply runs eating your timeline</li>
+          <li>Change orders issued and approved for any scope addition, always in writing</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="service-row">
+      <div class="service-num">02</div>
+      <div class="service-name">Restoration &amp; Repair</div>
+      <div class="service-desc">
+        Rot, water damage, and structural repair work — the kind of job that reveals what a builder is actually made of.
+        <ul>
+          <li>Hidden conditions (subfloor damage, rot, etc.) handled transparently as change orders</li>
+          <li>Nothing absorbed silently into base quote — you see exactly what changed and why</li>
+          <li>Licensed, insured work on every structural repair</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="service-row">
+      <div class="service-num">03</div>
+      <div class="service-name">Tile &amp; Finish Work</div>
+      <div class="service-desc">
+        Precision tile installation and finish detail — where a good remodel becomes a great one.
+        <ul>
+          <li>Custom layouts, pattern work, and material sourcing guidance</li>
+          <li>Finish-level attention on trim, caulking, and transitions</li>
+          <li>Available as a standalone service or bundled into a full remodel</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="service-row">
+      <div class="service-num">04</div>
+      <div class="service-name">General Renovation</div>
+      <div class="service-desc">
+        Whole-room and multi-room renovation projects, coordinated across trades.
+        <ul>
+          <li>Single point of contact for the full project, subcontractor coordination included</li>
+          <li>Deposit structure and payment schedule laid out clearly before work begins</li>
+          <li>Real timeline estimates, communicated honestly — not sold optimistically</li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section class="cta-strip">
+  <div class="wrap cta-strip-inner">
+    <h3>Have a project in mind?</h3>
+    <a class="btn-cream" href="quote.html">Request a Quote</a>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-wordmark">Fanelli Precision</div>
+    <div class="footer-bottom">
+      <span>© 2026 Fanelli Precision. All rights reserved.</span>
+      <span>Owner-operated · West Shore PA</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

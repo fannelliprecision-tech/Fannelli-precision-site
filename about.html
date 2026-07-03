@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About — Fanelli Precision</title>
+<meta name="description" content="Owner-operated renovation and restoration contracting serving the West Shore PA corridor.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --cream: #fef6e4; --ink: #0a0d06; --ink-green: #12210c;
+    --forest: #255124; --crimson: #b40e0e; --cream-dim: #f5ecd6; --max: 1180px;
+  }
+  *{ box-sizing: border-box; margin:0; padding:0; }
+  html{ scroll-behavior: smooth; }
+  body{ background: var(--cream); color: var(--ink); font-family:'Inter',-apple-system,sans-serif; line-height:1.6; -webkit-font-smoothing: antialiased; }
+  a{ color: inherit; text-decoration: none; }
+  .wrap{ max-width: var(--max); margin:0 auto; padding: 0 32px; }
+
+  header{ position:sticky; top:0; z-index:50; background:rgba(254,246,228,0.92); backdrop-filter:blur(6px); border-bottom:1px solid rgba(10,13,6,0.08); }
+  .header-inner{ display:flex; align-items:center; justify-content:space-between; padding:22px 0; }
+  .wordmark{ font-family:'Fraunces',serif; font-weight:500; font-size:19px; }
+  nav{ display:flex; align-items:center; gap:36px; }
+  nav a.nav-link{ font-size:13px; letter-spacing:0.08em; text-transform:uppercase; color:var(--ink-green); transition:color .2s; }
+  nav a.nav-link:hover{ color:var(--forest); }
+  nav a.nav-link.active{ color: var(--forest); }
+  .btn{ display:inline-block; padding:12px 26px; background:var(--forest); color:var(--cream); font-size:13px; letter-spacing:.06em; text-transform:uppercase; border-radius:2px; transition:.25s; white-space:nowrap; }
+  .btn:hover{ background:var(--ink-green); transform:translateY(-1px); }
+
+  .page-hero{ padding:72px 0 48px; }
+  .eyebrow{ font-size:12px; letter-spacing:.16em; text-transform:uppercase; color:var(--forest); margin-bottom:18px; display:flex; align-items:center; gap:10px; }
+  .eyebrow::before{ content:''; width:28px; height:1px; background:var(--forest); }
+  h1.page-title{ font-family:'Fraunces',serif; font-weight:400; font-size:clamp(38px,5.5vw,60px); line-height:1.02; max-width:640px; margin-bottom:18px; }
+  .page-sub{ font-size:16px; color:var(--ink-green); max-width:520px; opacity:.85; }
+
+  .story{ padding: 20px 0 80px; display:grid; grid-template-columns: 1fr 1fr; gap: 64px; }
+  .story-copy p{ font-size: 15.5px; color: var(--ink-green); margin-bottom: 18px; max-width: 480px; }
+  .story-image{ aspect-ratio: 4/5; background: linear-gradient(155deg, var(--ink-green) 0%, var(--forest) 55%, #1c3a17 100%); border-radius:2px; }
+
+  .values{ padding: 0 0 90px; }
+  .values-grid{ display:grid; grid-template-columns: repeat(3,1fr); gap:1px; background:rgba(10,13,6,0.1); border:1px solid rgba(10,13,6,0.1); }
+  .value-card{ background: var(--cream); padding: 36px 30px; }
+  .value-card:hover{ background: var(--cream-dim); }
+  .value-title{ font-family:'Fraunces',serif; font-size:20px; margin-bottom:10px; }
+  .value-desc{ font-size:14px; color:var(--ink-green); opacity:.85; }
+
+  .credentials{ background: var(--ink-green); color: var(--cream); padding: 72px 0; }
+  .cred-grid{ display:grid; grid-template-columns: repeat(4,1fr); gap: 32px; }
+  .cred-item{ }
+  .cred-num{ font-family:'Fraunces',serif; font-size:36px; margin-bottom:6px; }
+  .cred-label{ font-size:12px; letter-spacing:.08em; text-transform:uppercase; opacity:.75; }
+
+  .cta-strip{ padding:80px 0; text-align:center; }
+  .cta-strip h3{ font-family:'Fraunces',serif; font-weight:400; font-size:32px; margin-bottom:24px; }
+  .btn-lg{ display:inline-block; padding:16px 32px; background:var(--forest); color:var(--cream); font-size:13px; letter-spacing:.06em; text-transform:uppercase; border-radius:2px; }
+  .btn-lg:hover{ background:var(--ink-green); }
+
+  footer{ padding:56px 0 40px; }
+  .footer-bottom{ display:flex; justify-content:space-between; font-size:12px; color:var(--ink-green); opacity:.55; flex-wrap:wrap; gap:10px; padding-top:28px; border-top:1px solid rgba(10,13,6,0.1); }
+  .footer-wordmark{ font-family:'Fraunces',serif; font-size:19px; margin-bottom:6px; }
+
+  @media (max-width:860px){
+    nav{ display:none; }
+    .story{ grid-template-columns: 1fr; }
+    .story-image{ order:-1; }
+    .values-grid{ grid-template-columns: 1fr; }
+    .cred-grid{ grid-template-columns: repeat(2,1fr); }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap header-inner">
+    <a class="wordmark" href="index.html">Fanelli Precision</a>
+    <nav>
+      <a class="nav-link" href="services.html">Services</a>
+      <a class="nav-link" href="portfolio.html">Portfolio</a>
+      <a class="nav-link active" href="about.html">About</a>
+      <a class="btn" href="quote.html">Request a Quote</a>
+    </nav>
+  </div>
+</header>
+
+<section class="page-hero">
+  <div class="wrap">
+    <div class="eyebrow">About the company</div>
+    <h1 class="page-title">Built on precision. Owned by the work.</h1>
+    <p class="page-sub">Fanelli Precision is owner-operated — every project gets direct oversight from the person whose name is on it.</p>
+  </div>
+</section>
+
+<section class="story">
+  <div class="wrap" style="display:contents;">
+    <div class="story-copy">
+      <p>Fanelli Precision was founded on a simple premise: most residential contracting in this area doesn't hold itself to a real standard. Jobs get rushed, communication gets vague, and homeowners are left guessing what happens next.</p>
+      <p>We built the opposite of that — fixed-price estimates, materials locked before demo, hidden conditions handled as transparent change orders instead of silent scope creep, and a response time on new inquiries measured in minutes, not days.</p>
+      <p>Every project — from a single tile job to a full bathroom remodel — runs through the same operating discipline. That consistency is the actual product, not just the finish work.</p>
+    </div>
+    <div class="story-image"></div>
+  </div>
+</section>
+
+<section class="values">
+  <div class="wrap">
+    <div class="values-grid">
+      <div class="value-card">
+        <div class="value-title">Precision</div>
+        <div class="value-desc">Every quote, every material list, every schedule — built to hold up under scrutiny, not just look good on paper.</div>
+      </div>
+      <div class="value-card">
+        <div class="value-title">Transparency</div>
+        <div class="value-desc">Fixed-price quoting and documented change orders mean you always know what you're paying for and why.</div>
+      </div>
+      <div class="value-card">
+        <div class="value-title">Ownership</div>
+        <div class="value-desc">Owner-operated on every job — direct accountability, not a subcontracted name you'll never meet.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="credentials">
+  <div class="wrap">
+    <div class="cred-grid">
+      <div class="cred-item">
+        <div class="cred-num">10+</div>
+        <div class="cred-label">Completed Projects</div>
+      </div>
+      <div class="cred-item">
+        <div class="cred-num">&lt;10min</div>
+        <div class="cred-label">Average Response Time</div>
+      </div>
+      <div class="cred-item">
+        <div class="cred-num">100%</div>
+        <div class="cred-label">Licensed &amp; Insured</div>
+      </div>
+      <div class="cred-item">
+        <div class="cred-num">4</div>
+        <div class="cred-label">Communities Served</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-strip">
+  <div class="wrap">
+    <h3>Let's talk about your project.</h3>
+    <a class="btn-lg" href="quote.html">Request a Quote</a>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-wordmark">Fanelli Precision</div>
+    <div class="footer-bottom">
+      <span>© 2026 Fanelli Precision. All rights reserved.</span>
+      <span>Owner-operated · West Shore PA</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

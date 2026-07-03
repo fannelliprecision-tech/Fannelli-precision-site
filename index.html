@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fanelli Precision — Renovation &amp; Restoration, West Shore PA</title>
+<meta name="description" content="Residential renovation and restoration contracting serving Camp Hill, Mechanicsburg, Hampden Township, and the Harrisburg corridor.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --cream: #fef6e4;
+    --ink: #0a0d06;
+    --ink-green: #12210c;
+    --forest: #255124;
+    --crimson: #b40e0e;
+    --cream-dim: #f5ecd6;
+    --max: 1180px;
+  }
+
+  *{ box-sizing: border-box; margin:0; padding:0; }
+
+  html{ scroll-behavior: smooth; }
+
+  body{
+    background: var(--cream);
+    color: var(--ink);
+    font-family: 'Inter', -apple-system, sans-serif;
+    font-weight: 400;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  a{ color: inherit; text-decoration: none; }
+
+  .wrap{
+    max-width: var(--max);
+    margin: 0 auto;
+    padding: 0 32px;
+  }
+
+  /* ---------- Header ---------- */
+  header{
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background: rgba(254,246,228,0.92);
+    backdrop-filter: blur(6px);
+    border-bottom: 1px solid rgba(10,13,6,0.08);
+  }
+
+  .header-inner{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding: 22px 0;
+  }
+
+  .wordmark{
+    font-family:'Fraunces', serif;
+    font-weight: 500;
+    font-size: 19px;
+    letter-spacing: 0.01em;
+  }
+
+  nav{ display:flex; align-items:center; gap: 36px; }
+
+  nav a.nav-link{
+    font-size: 13px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--ink-green);
+    transition: color 0.2s ease;
+  }
+  nav a.nav-link:hover{ color: var(--forest); }
+
+  .btn{
+    display:inline-block;
+    padding: 12px 26px;
+    background: var(--forest);
+    color: var(--cream);
+    font-size: 13px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    border-radius: 2px;
+    transition: background 0.25s ease, transform 0.25s ease;
+    white-space: nowrap;
+  }
+  .btn:hover{ background: var(--ink-green); transform: translateY(-1px); }
+
+  /* ---------- Hero ---------- */
+  .hero{
+    padding: 96px 0 80px;
+    position: relative;
+  }
+
+  .hero-grid{
+    display:grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 64px;
+    align-items: center;
+  }
+
+  .eyebrow{
+    font-size: 12px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--forest);
+    margin-bottom: 22px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .eyebrow::before{
+    content:'';
+    width: 28px; height: 1px;
+    background: var(--forest);
+  }
+
+  h1.headline{
+    font-family:'Fraunces', serif;
+    font-weight: 400;
+    font-size: clamp(48px, 7vw, 84px);
+    line-height: 0.98;
+    letter-spacing: -0.01em;
+    color: var(--ink);
+    margin-bottom: 28px;
+  }
+  h1.headline em{
+    font-style: italic;
+    font-weight: 300;
+    color: var(--forest);
+  }
+
+  .hero-sub{
+    font-size: 17px;
+    color: var(--ink-green);
+    max-width: 420px;
+    margin-bottom: 36px;
+  }
+
+  .hero-cta-row{ display:flex; align-items:center; gap: 22px; }
+
+  .hero-cta-note{
+    font-size: 13px;
+    color: var(--ink-green);
+    opacity: 0.75;
+  }
+
+  .hero-image{
+    position: relative;
+    aspect-ratio: 4/5;
+    background: linear-gradient(155deg, var(--ink-green) 0%, var(--forest) 55%, #1c3a17 100%);
+    border-radius: 2px;
+    overflow: hidden;
+    display:flex;
+    align-items:flex-end;
+    padding: 28px;
+  }
+  .hero-image::after{
+    content:'';
+    position:absolute; inset:0;
+    background:
+      repeating-linear-gradient(115deg, rgba(254,246,228,0.045) 0px, rgba(254,246,228,0.045) 1px, transparent 1px, transparent 34px);
+  }
+  .hero-image-caption{
+    position: relative;
+    z-index: 2;
+    color: var(--cream);
+    font-size: 12px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    opacity: 0.85;
+  }
+
+  /* ---------- Trust bar ---------- */
+  .trust-bar{
+    border-top: 1px solid rgba(10,13,6,0.1);
+    border-bottom: 1px solid rgba(10,13,6,0.1);
+    padding: 28px 0;
+  }
+  .trust-inner{
+    display:flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  .trust-item{
+    font-size: 12.5px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: var(--ink-green);
+    display:flex;
+    align-items:center;
+    gap: 8px;
+  }
+  .trust-item .dot{
+    width:5px; height:5px; border-radius:50%;
+    background: var(--forest);
+    flex-shrink:0;
+  }
+
+  /* ---------- Section shell ---------- */
+  section{ padding: 100px 0; }
+
+  .section-head{
+    display:flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 56px;
+    gap: 32px;
+    flex-wrap: wrap;
+  }
+
+  .section-label{
+    font-size: 12px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--forest);
+    margin-bottom: 14px;
+  }
+
+  h2.section-title{
+    font-family:'Fraunces', serif;
+    font-weight: 400;
+    font-size: clamp(30px, 4vw, 44px);
+    letter-spacing: -0.01em;
+    max-width: 560px;
+  }
+
+  .section-meta{
+    font-size: 13px;
+    color: var(--ink-green);
+    opacity: 0.7;
+    max-width: 260px;
+    text-align: right;
+  }
+
+  /* ---------- Services ---------- */
+  .services-grid{
+    display:grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: rgba(10,13,6,0.1);
+    border: 1px solid rgba(10,13,6,0.1);
+  }
+
+  .service-card{
+    background: var(--cream);
+    padding: 40px 34px;
+    transition: background 0.25s ease;
+  }
+  .service-card:hover{ background: var(--cream-dim); }
+
+  .service-num{
+    font-family:'Fraunces', serif;
+    font-style: italic;
+    font-size: 14px;
+    color: var(--forest);
+    margin-bottom: 24px;
+    display:block;
+  }
+
+  .service-name{
+    font-family:'Fraunces', serif;
+    font-size: 22px;
+    font-weight: 400;
+    margin-bottom: 12px;
+  }
+
+  .service-desc{
+    font-size: 14.5px;
+    color: var(--ink-green);
+    opacity: 0.85;
+  }
+
+  /* ---------- Portfolio ---------- */
+  .portfolio-grid{
+    display:grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+
+  .portfolio-item{
+    aspect-ratio: 3/4;
+    background: var(--ink-green);
+    position: relative;
+    border-radius: 2px;
+    overflow: hidden;
+    display:flex;
+    flex-direction:column;
+    justify-content:flex-end;
+    padding: 22px;
+  }
+  .portfolio-item:nth-child(2){ background: var(--forest); }
+  .portfolio-item:nth-child(3){ background: #1c3a17; }
+
+  .portfolio-item::before{
+    content:'';
+    position:absolute; inset:0;
+    background: linear-gradient(180deg, transparent 40%, rgba(0,0,0,0.35) 100%);
+  }
+
+  .portfolio-tag{
+    position:relative; z-index:2;
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--cream);
+    opacity: 0.85;
+    margin-bottom: 6px;
+  }
+  .portfolio-title{
+    position:relative; z-index:2;
+    font-family:'Fraunces', serif;
+    font-size: 21px;
+    color: var(--cream);
+  }
+
+  /* ---------- Quote / CTA ---------- */
+  .cta-section{
+    background: var(--ink-green);
+    color: var(--cream);
+    padding: 110px 0;
+  }
+
+  .cta-inner{
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 64px;
+    align-items: center;
+  }
+
+  .cta-inner .eyebrow{ color: var(--cream); opacity: 0.7; }
+  .cta-inner .eyebrow::before{ background: var(--cream); opacity: 0.5; }
+
+  h2.cta-headline{
+    font-family:'Fraunces', serif;
+    font-weight: 400;
+    font-size: clamp(32px, 4.4vw, 48px);
+    line-height: 1.05;
+    margin-bottom: 20px;
+  }
+  h2.cta-headline em{ font-style: italic; color: #c9dbb8; }
+
+  .cta-copy{
+    font-size: 15.5px;
+    opacity: 0.82;
+    max-width: 420px;
+  }
+
+  form.quote-form{
+    display:flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .form-row{ display:flex; gap: 14px; }
+  .form-row > *{ flex:1; }
+
+  input, select, textarea{
+    width: 100%;
+    background: rgba(254,246,228,0.06);
+    border: 1px solid rgba(254,246,228,0.25);
+    color: var(--cream);
+    padding: 14px 16px;
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    border-radius: 2px;
+  }
+  input::placeholder, textarea::placeholder{ color: rgba(254,246,228,0.5); }
+  input:focus, select:focus, textarea:focus{
+    outline: none;
+    border-color: var(--cream);
+  }
+
+  textarea{ resize: vertical; min-height: 90px; }
+
+  .btn-cream{
+    background: var(--cream);
+    color: var(--ink-green);
+    padding: 15px 26px;
+    font-size: 13px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    border-radius: 2px;
+    border: none;
+    cursor: pointer;
+    transition: background 0.25s ease;
+    align-self: flex-start;
+  }
+  .btn-cream:hover{ background: #fff; }
+
+  .form-note{
+    font-size: 12.5px;
+    opacity: 0.6;
+    margin-top: -2px;
+  }
+
+  .sr-only{
+    position: absolute;
+    width: 1px; height: 1px;
+    padding: 0; margin: -1px;
+    overflow: hidden;
+    clip: rect(0,0,0,0);
+    white-space: nowrap;
+    border: 0;
+  }
+
+  /* ---------- Footer ---------- */
+  footer{ padding: 64px 0 40px; }
+
+  .footer-top{
+    display:flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 32px;
+    padding-bottom: 40px;
+    border-bottom: 1px solid rgba(10,13,6,0.1);
+    margin-bottom: 28px;
+  }
+
+  .footer-wordmark{
+    font-family:'Fraunces', serif;
+    font-size: 22px;
+    margin-bottom: 10px;
+  }
+
+  .footer-tagline{
+    font-size: 13px;
+    font-style: italic;
+    color: var(--forest);
+  }
+
+  .footer-cols{ display:flex; gap: 64px; flex-wrap: wrap; }
+
+  .footer-col-title{
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--forest);
+    margin-bottom: 16px;
+  }
+
+  .footer-col a, .footer-col span{
+    display:block;
+    font-size: 14px;
+    color: var(--ink-green);
+    margin-bottom: 10px;
+    opacity: 0.85;
+  }
+  .footer-col a:hover{ color: var(--forest); }
+
+  .footer-bottom{
+    display:flex;
+    justify-content: space-between;
+    font-size: 12px;
+    color: var(--ink-green);
+    opacity: 0.55;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  /* ---------- Responsive ---------- */
+  @media (max-width: 860px){
+    nav{ display:none; }
+    .hero-grid{ grid-template-columns: 1fr; }
+    .hero-image{ order:-1; aspect-ratio: 16/10; }
+    .services-grid{ grid-template-columns: 1fr; }
+    .portfolio-grid{ grid-template-columns: 1fr; }
+    .cta-inner{ grid-template-columns: 1fr; }
+    .form-row{ flex-direction: column; }
+    .section-meta{ text-align:left; }
+    .footer-top{ flex-direction:column; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap header-inner">
+    <div class="wordmark">Fanelli Precision</div>
+    <nav>
+      <a class="nav-link" href="services.html">Services</a>
+      <a class="nav-link" href="portfolio.html">Portfolio</a>
+      <a class="nav-link" href="about.html">About</a>
+      <a class="btn" href="quote.html">Request a Quote</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <div class="eyebrow">Camp Hill · Mechanicsburg · Hampden · Harrisburg Corridor</div>
+      <h1 class="headline">Precisione.<br>Passione.<br><em>Fanelli.</em></h1>
+      <p class="hero-sub">Residential renovation and restoration, built to a standard most contractors don't hold themselves to. Tile, remodels, structural work — done once, done right.</p>
+      <div class="hero-cta-row">
+        <a class="btn" href="quote.html">Request a Quote</a>
+        <span class="hero-cta-note">Response within 10 minutes on active inquiries.</span>
+      </div>
+    </div>
+    <div class="hero-image">
+      <div class="hero-image-caption">Recent work — bathroom remodel, Camp Hill</div>
+    </div>
+  </div>
+</section>
+
+<div class="trust-bar">
+  <div class="wrap trust-inner">
+    <div class="trust-item"><span class="dot"></span>Licensed &amp; insured</div>
+    <div class="trust-item"><span class="dot"></span>West Shore PA service area</div>
+    <div class="trust-item"><span class="dot"></span>Fixed-price, written estimates</div>
+    <div class="trust-item"><span class="dot"></span>Owner-operated on every job</div>
+  </div>
+</div>
+
+<section id="services">
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        <div class="section-label">What we do</div>
+        <h2 class="section-title">Renovation and restoration, handled end to end.</h2>
+      </div>
+      <p class="section-meta">Each project is scoped, quoted, and scheduled before a single tool touches the site.</p>
+    </div>
+    <div class="services-grid">
+      <div class="service-card">
+        <span class="service-num">01</span>
+        <div class="service-name">Bathroom &amp; Kitchen Remodels</div>
+        <p class="service-desc">Full gut renovations, tile, fixtures, and finish carpentry — quoted fixed-price, no surprises mid-project.</p>
+      </div>
+      <div class="service-card">
+        <span class="service-num">02</span>
+        <div class="service-name">Restoration &amp; Repair</div>
+        <p class="service-desc">Rot, water damage, structural repair — hidden conditions are handled transparently, never absorbed silently into scope.</p>
+      </div>
+      <div class="service-card">
+        <span class="service-num">03</span>
+        <div class="service-name">Tile &amp; Finish Work</div>
+        <p class="service-desc">Precision tile installation and finish detail — the work that separates a good remodel from a great one.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="portfolio">
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        <div class="section-label">Recent projects</div>
+        <h2 class="section-title"><a href="portfolio.html" style="text-decoration:underline;">A small sample of finished work →</a></h2>
+      </div>
+      <p class="section-meta">Full portfolio, including before/after detail, available on request.</p>
+    </div>
+    <div class="portfolio-grid">
+      <div class="portfolio-item">
+        <div class="portfolio-tag">Bathroom Remodel</div>
+        <div class="portfolio-title">Camp Hill</div>
+      </div>
+      <div class="portfolio-item">
+        <div class="portfolio-tag">Full Renovation</div>
+        <div class="portfolio-title">Mechanicsburg</div>
+      </div>
+      <div class="portfolio-item">
+        <div class="portfolio-tag">Tile &amp; Finish</div>
+        <div class="portfolio-title">Hampden Township</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-section" id="quote">
+  <div class="wrap cta-inner">
+    <div>
+      <div class="eyebrow">Start a project</div>
+      <h2 class="cta-headline">Tell us what you're working on. <em>We'll respond fast.</em></h2>
+      <p class="cta-copy">Every inquiry gets a real response — not a form letter. Give us the basics and we'll follow up with next steps, usually the same day.</p>
+    </div>
+    <form class="quote-form" action="https://formspree.io/f/xykqblgq" method="POST">
+      <input type="hidden" name="form_type" value="Quote Request (Home)">
+      <div class="form-row">
+        <label for="hero-name" class="sr-only">Full name</label>
+        <input id="hero-name" type="text" name="name" placeholder="Full name" required>
+        <label for="hero-phone" class="sr-only">Phone number</label>
+        <input id="hero-phone" type="tel" name="phone" placeholder="Phone number" required>
+      </div>
+      <label for="hero-email" class="sr-only">Email address</label>
+      <input id="hero-email" type="email" name="email" placeholder="Email address" required>
+      <label for="hero-project" class="sr-only">Project type</label>
+      <select id="hero-project" name="project_type" required>
+        <option value="" disabled selected>Project type</option>
+        <option>Bathroom Remodel</option>
+        <option>Kitchen Remodel</option>
+        <option>Restoration / Repair</option>
+        <option>Tile Work</option>
+        <option>Other</option>
+      </select>
+      <label for="hero-details" class="sr-only">Project details</label>
+      <textarea id="hero-details" name="details" placeholder="Briefly describe the project and timeline"></textarea>
+      <button class="btn-cream" type="submit">Request a Quote</button>
+      <p class="form-note">Submissions route directly to our inbox — no spam, no follow-up calls unless you ask.</p>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-top">
+      <div>
+        <div class="footer-wordmark">Fanelli Precision</div>
+        <div class="footer-tagline">Precisione. Passione. Fanelli.</div>
+      </div>
+      <div class="footer-cols">
+        <div class="footer-col">
+          <div class="footer-col-title">Company</div>
+          <a href="services.html">Services</a>
+          <a href="portfolio.html">Portfolio</a>
+          <a href="about.html">About</a>
+          <a href="subcontractors.html">Subcontractors</a>
+        </div>
+        <div class="footer-col">
+          <div class="footer-col-title">Service Area</div>
+          <span>Camp Hill</span>
+          <span>Mechanicsburg</span>
+          <span>Hampden Township</span>
+          <span>Harrisburg Corridor</span>
+        </div>
+        <div class="footer-col">
+          <div class="footer-col-title">Contact</div>
+          <a href="mailto:info@fanelliprecision.com">info@fanelliprecision.com</a>
+          <a href="quote.html">Request a Quote</a>
+          <a href="#">Google Business</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Fanelli Precision. All rights reserved.</span>
+      <span>Owner-operated · West Shore PA</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

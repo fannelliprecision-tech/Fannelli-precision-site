@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Subcontractor Application — Fanelli Precision</title>
+<meta name="description" content="Apply to join the Fanelli Precision subcontractor bench.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --cream: #fef6e4; --ink: #0a0d06; --ink-green: #12210c;
+    --forest: #255124; --crimson: #b40e0e; --cream-dim: #f5ecd6; --max: 1180px;
+  }
+  *{ box-sizing: border-box; margin:0; padding:0; }
+  body{ background: var(--cream); color: var(--ink); font-family:'Inter',-apple-system,sans-serif; line-height:1.6; -webkit-font-smoothing: antialiased; }
+  a{ color: inherit; text-decoration: none; }
+  .wrap{ max-width: 900px; margin:0 auto; padding: 0 32px; }
+
+  header{ border-bottom:1px solid rgba(10,13,6,0.08); }
+  .header-inner{ display:flex; align-items:center; justify-content:space-between; padding:22px 0; max-width: 1180px; margin: 0 auto; padding-left:32px; padding-right:32px; }
+  .wordmark{ font-family:'Fraunces',serif; font-weight:500; font-size:19px; }
+  .btn-outline{ display:inline-block; padding:11px 22px; border:1px solid var(--ink-green); color:var(--ink-green); font-size:13px; letter-spacing:.06em; text-transform:uppercase; border-radius:2px; }
+  .btn-outline:hover{ background: var(--ink-green); color: var(--cream); }
+
+  .page-hero{ padding:64px 0 40px; }
+  .eyebrow{ font-size:12px; letter-spacing:.16em; text-transform:uppercase; color:var(--forest); margin-bottom:16px; display:flex; align-items:center; gap:10px; }
+  .eyebrow::before{ content:''; width:28px; height:1px; background:var(--forest); }
+  h1.page-title{ font-family:'Fraunces',serif; font-weight:400; font-size:clamp(32px,4.5vw,46px); line-height:1.05; margin-bottom:16px; }
+  .page-sub{ font-size:15px; color:var(--ink-green); opacity:.85; max-width: 560px; }
+
+  .trade-tags{ display:flex; gap:10px; flex-wrap:wrap; margin-top: 24px; }
+  .tag{ font-size:12px; letter-spacing:.05em; text-transform:uppercase; color: var(--forest); border:1px solid var(--forest); padding: 7px 14px; border-radius: 20px; }
+
+  form.app-form{ padding: 32px 0 90px; display:flex; flex-direction:column; gap:16px; }
+  .form-row{ display:flex; gap:16px; }
+  .form-row > *{ flex:1; }
+  label{ font-size:12px; letter-spacing:.05em; text-transform:uppercase; color: var(--ink-green); opacity:.7; margin-bottom:6px; display:block; }
+  input, select, textarea{
+    width:100%; background: var(--cream); border:1px solid rgba(10,13,6,0.2);
+    color: var(--ink); padding:14px 16px; font-family:'Inter',sans-serif; font-size:14px; border-radius:2px;
+  }
+  input:focus, select:focus, textarea:focus{ outline:none; border-color: var(--forest); }
+  textarea{ resize:vertical; min-height:100px; }
+  .field-group{ display:flex; flex-direction:column; }
+
+  .checkbox-row{ display:flex; align-items:flex-start; gap: 10px; }
+  .checkbox-row input{ width:auto; margin-top: 3px; }
+  .checkbox-row label{ text-transform:none; letter-spacing:0; font-size:13.5px; opacity:.85; }
+
+  .submit-btn{
+    background: var(--forest); color: var(--cream); padding:16px 26px; font-size:13px;
+    letter-spacing:.06em; text-transform:uppercase; border-radius:2px; border:none; cursor:pointer;
+    transition: background .25s; align-self:flex-start;
+  }
+  .submit-btn:hover{ background: var(--ink-green); }
+  .form-note{ font-size:12.5px; color: var(--ink-green); opacity:.6; }
+
+  footer{ padding: 40px 0; border-top:1px solid rgba(10,13,6,0.1); }
+  .footer-bottom{ display:flex; justify-content:space-between; font-size:12px; color:var(--ink-green); opacity:.55; flex-wrap:wrap; gap:10px; max-width: 1180px; margin:0 auto; padding-left:32px; padding-right:32px; }
+
+  @media (max-width:700px){ .form-row{ flex-direction:column; } }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <a class="wordmark" href="index.html">Fanelli Precision</a>
+    <a class="btn-outline" href="index.html">← Home</a>
+  </div>
+</header>
+
+<section class="page-hero">
+  <div class="wrap">
+    <div class="eyebrow">Join the bench</div>
+    <h1 class="page-title">Subcontractor Application</h1>
+    <p class="page-sub">We're building a vetted network of licensed, reliable trade professionals across the West Shore corridor. If you do quality work and show up when you say you will, we want to hear from you.</p>
+    <div class="trade-tags">
+      <span class="tag">Licensed Electrician</span>
+      <span class="tag">Licensed Plumber</span>
+      <span class="tag">Carpentry</span>
+      <span class="tag">Tile</span>
+      <span class="tag">Painting</span>
+      <span class="tag">Concrete &amp; Drywall</span>
+    </div>
+  </div>
+</section>
+
+<form class="app-form wrap" action="https://formspree.io/f/xykqblgq" method="POST">
+  <input type="hidden" name="form_type" value="Subcontractor Application">
+  <div class="form-row">
+    <div class="field-group">
+      <label for="name">Full name</label>
+      <input id="name" type="text" name="name" required>
+    </div>
+    <div class="field-group">
+      <label for="phone">Phone number</label>
+      <input id="phone" type="tel" name="phone" required>
+    </div>
+  </div>
+
+  <div class="field-group">
+    <label for="email">Email address</label>
+    <input id="email" type="email" name="email" required>
+  </div>
+
+  <div class="form-row">
+    <div class="field-group">
+      <label for="trade">Primary trade</label>
+      <select id="trade" name="trade" required>
+        <option value="" disabled selected>Select one</option>
+        <option>Electrician</option>
+        <option>Plumber</option>
+        <option>Carpenter</option>
+        <option>Tile Installer</option>
+        <option>Painter</option>
+        <option>Concrete / Drywall</option>
+        <option>Other</option>
+      </select>
+    </div>
+    <div class="field-group">
+      <label for="license">Licensed &amp; insured?</label>
+      <select id="license" name="license" required>
+        <option value="" disabled selected>Select one</option>
+        <option>Yes, both</option>
+        <option>Licensed only</option>
+        <option>Insured only</option>
+        <option>Neither yet</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="field-group">
+    <label for="experience">Years of experience</label>
+    <input id="experience" type="text" name="experience" placeholder="e.g. 6 years">
+  </div>
+
+  <div class="field-group">
+    <label for="availability">Current availability</label>
+    <select id="availability" name="availability">
+      <option value="" disabled selected>Select one</option>
+      <option>Immediately available</option>
+      <option>Available within 2 weeks</option>
+      <option>Limited / occasional availability</option>
+    </select>
+  </div>
+
+  <div class="field-group">
+    <label for="details">Tell us about your work</label>
+    <textarea id="details" name="details" placeholder="Recent projects, specialties, references..."></textarea>
+  </div>
+
+  <div class="checkbox-row">
+    <input type="checkbox" id="w9" name="w9_confirm" required>
+    <label for="w9">I can provide a completed W-9 and proof of work authorization if selected.</label>
+  </div>
+
+  <button class="submit-btn" type="submit">Submit Application</button>
+  <p class="form-note">We review every application personally and follow up directly — no automated rejections.</p>
+</form>
+
+<footer>
+  <div class="footer-bottom">
+    <span>© 2026 Fanelli Precision. All rights reserved.</span>
+    <span>Owner-operated · West Shore PA</span>
+  </div>
+</footer>
+
+</body>
+</html>
