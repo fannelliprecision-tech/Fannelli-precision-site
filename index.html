@@ -3,477 +3,207 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Fanelli Precision — Renovation &amp; Restoration, West Shore PA</title>
-<meta name="description" content="Residential renovation and restoration contracting serving Camp Hill, Mechanicsburg, Hampden Township, and the Harrisburg corridor.">
+<title>Fannelli Precision — Commercial &amp; Residential General Contracting, Central PA</title>
+<meta name="description" content="Licensed &amp; insured general contracting serving Central Pennsylvania — Harrisburg Area, West Shore, Carlisle Area. Free fixed-price estimates, same-day response.">
+<link rel="icon" type="image/png" href="favicon-32.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "GeneralContractor",
+  "name": "Fannelli Precision",
+  "image": "https://fannelliprecision.com/images/hero.jpg",
+  "url": "https://fannelliprecision.com",
+  "telephone": "+1-717-555-0100",
+  "email": "FannelliPrecision@gmail.com",
+  "address": {
+    "@type": "PostalAddress",
+    "addressRegion": "PA",
+    "addressLocality": "Central Pennsylvania",
+    "addressCountry": "US"
+  },
+  "areaServed": ["Harrisburg Area", "West Shore", "Carlisle Area", "Central Pennsylvania"],
+  "priceRange": "$$"
+}
+</script>
 <style>
   :root{
-    --cream: #fef6e4;
-    --ink: #0a0d06;
-    --ink-green: #12210c;
-    --forest: #255124;
-    --crimson: #b40e0e;
-    --cream-dim: #f5ecd6;
-    --max: 1180px;
+    --cream: #fef6e4; --ink: #0a0d06; --ink-green: #12210c;
+    --forest: #255124; --crimson: #b40e0e; --cream-dim: #f5ecd6; --max: 1180px;
   }
-
   *{ box-sizing: border-box; margin:0; padding:0; }
-
   html{ scroll-behavior: smooth; }
-
-  body{
-    background: var(--cream);
-    color: var(--ink);
-    font-family: 'Inter', -apple-system, sans-serif;
-    font-weight: 400;
-    line-height: 1.6;
-    -webkit-font-smoothing: antialiased;
-  }
-
+  body{ background: var(--cream); color: var(--ink); font-family:'Inter',-apple-system,sans-serif; line-height:1.6; -webkit-font-smoothing: antialiased; padding-bottom: 0; }
   a{ color: inherit; text-decoration: none; }
+  .wrap{ max-width: var(--max); margin:0 auto; padding: 0 32px; }
 
-  .wrap{
-    max-width: var(--max);
-    margin: 0 auto;
-    padding: 0 32px;
-  }
+  /* Header */
+  header{ position:sticky; top:0; z-index:50; background:rgba(254,246,228,0.95); backdrop-filter:blur(6px); border-bottom:1px solid rgba(10,13,6,0.08); }
+  .header-inner{ display:flex; align-items:center; justify-content:space-between; padding:14px 0; }
+  .brand-link{ display:flex; align-items:center; gap:12px; }
+  .logo-mark{ width:36px; height:36px; flex-shrink:0; object-fit: contain; }
+  .brand-text{ display:flex; flex-direction:column; line-height:1.25; }
+  .brand-name{ font-family:'Fraunces',serif; font-weight:500; font-size:17px; letter-spacing:.01em; }
+  .brand-sub{ font-family:'Inter',sans-serif; font-size:10px; letter-spacing:.04em; color:var(--ink-green); opacity:.75; }
+  nav{ display:flex; align-items:center; gap:28px; }
+  nav a.nav-link{ font-size:13px; letter-spacing:0.06em; text-transform:uppercase; color:var(--ink-green); transition:color .2s; }
+  nav a.nav-link:hover{ color:var(--forest); }
+  .header-cta-group{ display:flex; align-items:center; gap:18px; }
+  .header-phone{ display:flex; align-items:center; gap:7px; font-weight:600; font-size:14.5px; color:var(--ink); }
+  .header-phone svg{ width:16px; height:16px; stroke:var(--forest); }
+  .btn{ display:inline-block; padding:11px 24px; background:var(--forest); color:var(--cream); font-size:13px; font-weight:600; letter-spacing:.05em; text-transform:uppercase; border-radius:2px; transition:.25s; white-space:nowrap; }
+  .btn:hover{ background:var(--ink-green); transform:translateY(-1px); }
 
-  /* ---------- Header ---------- */
-  header{
-    position: sticky;
-    top: 0;
-    z-index: 50;
-    background: rgba(254,246,228,0.92);
-    backdrop-filter: blur(6px);
-    border-bottom: 1px solid rgba(10,13,6,0.08);
-  }
-
-  .header-inner{
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    padding: 22px 0;
-  }
-
-  .wordmark{
-    font-family:'Fraunces', serif;
-    font-weight: 500;
-    font-size: 19px;
-    letter-spacing: 0.01em;
-  }
-
-  nav{ display:flex; align-items:center; gap: 36px; }
-
-  nav a.nav-link{
-    font-size: 13px;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    color: var(--ink-green);
-    transition: color 0.2s ease;
-  }
-  nav a.nav-link:hover{ color: var(--forest); }
-
-  .btn{
-    display:inline-block;
-    padding: 12px 26px;
-    background: var(--forest);
-    color: var(--cream);
-    font-size: 13px;
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
-    border-radius: 2px;
-    transition: background 0.25s ease, transform 0.25s ease;
-    white-space: nowrap;
-  }
-  .btn:hover{ background: var(--ink-green); transform: translateY(-1px); }
-
-  /* ---------- Hero ---------- */
-  .hero{
-    padding: 96px 0 80px;
-    position: relative;
-  }
-
-  .hero-grid{
-    display:grid;
-    grid-template-columns: 1.1fr 0.9fr;
-    gap: 64px;
-    align-items: center;
-  }
-
-  .eyebrow{
-    font-size: 12px;
-    letter-spacing: 0.16em;
-    text-transform: uppercase;
-    color: var(--forest);
-    margin-bottom: 22px;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-  }
-  .eyebrow::before{
-    content:'';
-    width: 28px; height: 1px;
-    background: var(--forest);
-  }
-
-  h1.headline{
-    font-family:'Fraunces', serif;
-    font-weight: 400;
-    font-size: clamp(48px, 7vw, 84px);
-    line-height: 0.98;
-    letter-spacing: -0.01em;
-    color: var(--ink);
-    margin-bottom: 28px;
-  }
-  h1.headline em{
-    font-style: italic;
-    font-weight: 300;
-    color: var(--forest);
-  }
-
-  .hero-sub{
-    font-size: 17px;
-    color: var(--ink-green);
-    max-width: 420px;
-    margin-bottom: 36px;
-  }
-
-  .hero-cta-row{ display:flex; align-items:center; gap: 22px; }
-
-  .hero-cta-note{
-    font-size: 13px;
-    color: var(--ink-green);
-    opacity: 0.75;
-  }
-
-  .hero-image{
-    position: relative;
-    aspect-ratio: 4/5;
-    background: linear-gradient(155deg, var(--ink-green) 0%, var(--forest) 55%, #1c3a17 100%);
-    border-radius: 2px;
-    overflow: hidden;
-    display:flex;
-    align-items:flex-end;
-    padding: 28px;
-  }
-  .hero-image::after{
-    content:'';
+  /* Hero — above the fold, all conversion elements visible */
+  .hero{ position:relative; min-height: 88vh; display:flex; align-items:center; overflow:hidden; }
+  .hero-bg{
     position:absolute; inset:0;
-    background:
-      repeating-linear-gradient(115deg, rgba(254,246,228,0.045) 0px, rgba(254,246,228,0.045) 1px, transparent 1px, transparent 34px);
+    background-image: linear-gradient(180deg, rgba(10,13,6,0.35) 0%, rgba(10,13,6,0.78) 100%), url('images/hero.jpg');
+    background-size:cover; background-position:center; background-color: var(--ink-green);
   }
-  .hero-image-caption{
-    position: relative;
-    z-index: 2;
-    color: var(--cream);
-    font-size: 12px;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    opacity: 0.85;
-  }
+  .hero-content{ position:relative; z-index:2; padding: 60px 0; width:100%; }
+  .hero-badges{ display:flex; gap: 14px; flex-wrap: wrap; margin-bottom: 20px; }
+  .hero-badge{ font-size:11.5px; font-weight:600; letter-spacing:.06em; text-transform:uppercase; color:var(--ink); background: var(--cream); padding: 7px 14px; border-radius: 20px; display:flex; align-items:center; gap:6px; }
+  .hero-badge .stars{ color: #d9a441; letter-spacing: 1px; }
+  h1.headline{ font-family:'Fraunces',serif; font-weight:400; font-size:clamp(34px,5.2vw,58px); line-height:1.1; letter-spacing:-0.01em; color:var(--cream); margin-bottom:18px; max-width:740px; }
+  h1.headline em{ font-style:italic; font-weight:300; color:#d9c98a; }
+  .hero-sub{ font-size:16.5px; color:var(--cream); opacity:.88; max-width:480px; margin-bottom:32px; }
+  .hero-cta-row{ display:flex; align-items:center; gap:16px; flex-wrap:wrap; }
+  .btn-lg{ padding:16px 32px; font-size:14px; }
+  .btn-outline-cream{ display:inline-flex; align-items:center; gap:9px; padding:16px 28px; border:1.5px solid var(--cream); color:var(--cream); font-size:14px; font-weight:600; letter-spacing:.05em; text-transform:uppercase; border-radius:2px; transition:.2s; }
+  .btn-outline-cream:hover{ background: rgba(254,246,228,0.1); }
+  .btn-outline-cream svg{ width:16px; height:16px; stroke:var(--cream); }
+  .hero-note{ font-size:13px; color:var(--cream); opacity:.7; margin-top: 18px; }
 
-  /* ---------- Trust bar ---------- */
-  .trust-bar{
-    border-top: 1px solid rgba(10,13,6,0.1);
-    border-bottom: 1px solid rgba(10,13,6,0.1);
-    padding: 28px 0;
-  }
-  .trust-inner{
-    display:flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 20px;
-  }
-  .trust-item{
-    font-size: 12.5px;
-    letter-spacing: 0.05em;
-    text-transform: uppercase;
-    color: var(--ink-green);
-    display:flex;
-    align-items:center;
-    gap: 8px;
-  }
-  .trust-item .dot{
-    width:5px; height:5px; border-radius:50%;
-    background: var(--forest);
-    flex-shrink:0;
-  }
+  /* Trust bar — directly below hero, high-priority per research */
+  .trust-bar{ background: var(--ink-green); padding:22px 0; }
+  .trust-inner{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:18px; align-items:center; }
+  .trust-item{ font-size:12.5px; letter-spacing:.04em; color:var(--cream); display:flex; align-items:center; gap:8px; font-weight:500; }
+  .trust-item .dot{ width:5px; height:5px; border-radius:50%; background:var(--crimson); flex-shrink:0; }
+  .trust-item strong{ font-weight:700; }
 
-  /* ---------- Section shell ---------- */
-  section{ padding: 100px 0; }
+  .lang-strip{ background: var(--cream-dim); padding: 13px 0; text-align:center; }
+  .lang-strip span{ font-size:12px; letter-spacing:.06em; text-transform:uppercase; color:var(--forest); }
+  .lang-strip strong{ color: var(--ink); }
 
-  .section-head{
-    display:flex;
-    justify-content: space-between;
-    align-items: flex-end;
-    margin-bottom: 56px;
-    gap: 32px;
-    flex-wrap: wrap;
-  }
+  section{ padding:90px 0; }
+  .section-head{ display:flex; justify-content:space-between; align-items:flex-end; margin-bottom:52px; gap:32px; flex-wrap:wrap; }
+  .section-label{ font-size:12px; letter-spacing:.16em; text-transform:uppercase; color:var(--forest); margin-bottom:14px; }
+  h2.section-title{ font-family:'Fraunces',serif; font-weight:400; font-size:clamp(28px,3.8vw,42px); letter-spacing:-0.01em; max-width:560px; }
+  .section-meta{ font-size:13px; color:var(--ink-green); opacity:.7; max-width:260px; text-align:right; }
 
-  .section-label{
-    font-size: 12px;
-    letter-spacing: 0.16em;
-    text-transform: uppercase;
-    color: var(--forest);
-    margin-bottom: 14px;
-  }
+  /* Services */
+  .services-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:1px; background:rgba(10,13,6,0.1); border:1px solid rgba(10,13,6,0.1); }
+  .service-card{ background:var(--cream); padding:36px 30px; transition:background .25s; }
+  .service-card:hover{ background:var(--cream-dim); }
+  .service-num{ font-family:'Fraunces',serif; font-style:italic; font-size:14px; color:var(--forest); margin-bottom:20px; display:block; }
+  .service-name{ font-family:'Fraunces',serif; font-size:20px; font-weight:400; margin-bottom:10px; }
+  .service-desc{ font-size:14px; color:var(--ink-green); opacity:.85; }
 
-  h2.section-title{
-    font-family:'Fraunces', serif;
-    font-weight: 400;
-    font-size: clamp(30px, 4vw, 44px);
-    letter-spacing: -0.01em;
-    max-width: 560px;
-  }
+  /* Proof — before/after + testimonial, per research this is highest-persuasion content */
+  .proof-section{ background: var(--cream-dim); }
+  .proof-grid{ display:grid; grid-template-columns: 1.3fr 1fr; gap: 48px; align-items: center; }
+  .before-after{ display:grid; grid-template-columns: 1fr 1fr; gap: 2px; border-radius: 2px; overflow:hidden; }
+  .ba-panel{ aspect-ratio: 4/5; background-size:cover; background-position:center; background-color: var(--ink-green); position:relative; display:flex; align-items:flex-end; padding: 16px; }
+  .ba-panel::before{ content:''; position:absolute; inset:0; background:linear-gradient(180deg,transparent 50%,rgba(0,0,0,0.5) 100%); }
+  .ba-label{ position:relative; z-index:2; font-size:11px; font-weight:700; letter-spacing:.1em; text-transform:uppercase; color:var(--cream); }
+  .testimonial-quote{ font-family:'Fraunces',serif; font-style:italic; font-size:22px; line-height:1.4; color:var(--ink); margin-bottom:20px; }
+  .testimonial-author{ font-size:13px; font-weight:600; color:var(--forest); }
+  .testimonial-stars{ color:#d9a441; letter-spacing:2px; margin-bottom:16px; display:block; }
 
-  .section-meta{
-    font-size: 13px;
-    color: var(--ink-green);
-    opacity: 0.7;
-    max-width: 260px;
-    text-align: right;
-  }
+  /* Process */
+  .process-grid{ display:grid; grid-template-columns:repeat(4,1fr); gap: 28px; }
+  .process-step{ position:relative; }
+  .process-num{ font-family:'Fraunces',serif; font-size: 44px; color: var(--crimson); opacity:.25; line-height:1; margin-bottom: 14px; }
+  .process-name{ font-family:'Fraunces',serif; font-size: 18px; margin-bottom: 8px; }
+  .process-desc{ font-size: 13.5px; color: var(--ink-green); opacity:.8; }
 
-  /* ---------- Services ---------- */
-  .services-grid{
-    display:grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1px;
-    background: rgba(10,13,6,0.1);
-    border: 1px solid rgba(10,13,6,0.1);
-  }
+  /* Why choose us */
+  .why-grid{ display:grid; grid-template-columns: repeat(3,1fr); gap: 1px; background: rgba(10,13,6,0.1); border:1px solid rgba(10,13,6,0.1); }
+  .why-card{ background: var(--cream); padding: 32px 28px; text-align:center; }
+  .why-icon{ width: 40px; height: 40px; margin: 0 auto 16px; stroke: var(--forest); }
+  .why-title{ font-family:'Fraunces',serif; font-size: 18px; margin-bottom: 8px; }
+  .why-desc{ font-size: 13.5px; color: var(--ink-green); opacity: .8; }
 
-  .service-card{
-    background: var(--cream);
-    padding: 40px 34px;
-    transition: background 0.25s ease;
-  }
-  .service-card:hover{ background: var(--cream-dim); }
+  /* Portfolio preview */
+  .portfolio-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:18px; }
+  .portfolio-item{ aspect-ratio:3/4; background-size:cover; background-position:center; background-color:var(--ink-green); position:relative; border-radius:2px; overflow:hidden; display:flex; flex-direction:column; justify-content:flex-end; padding:20px; }
+  .portfolio-item::before{ content:''; position:absolute; inset:0; background:linear-gradient(180deg,transparent 40%,rgba(0,0,0,0.5) 100%); }
+  .portfolio-tag{ position:relative; z-index:2; font-size:11px; letter-spacing:.1em; text-transform:uppercase; color:var(--cream); opacity:.85; margin-bottom:5px; }
+  .portfolio-title{ position:relative; z-index:2; font-family:'Fraunces',serif; font-size:19px; color:var(--cream); }
 
-  .service-num{
-    font-family:'Fraunces', serif;
-    font-style: italic;
-    font-size: 14px;
-    color: var(--forest);
-    margin-bottom: 24px;
-    display:block;
-  }
+  /* Service area */
+  .area-section{ background: var(--cream-dim); }
+  .area-list{ display:flex; gap: 14px; flex-wrap:wrap; margin-top: 20px; }
+  .area-pill{ font-size:12.5px; font-weight:600; letter-spacing:.04em; text-transform:uppercase; padding: 10px 20px; background: var(--cream); border: 1px solid rgba(10,13,6,0.12); border-radius: 20px; color: var(--ink-green); }
 
-  .service-name{
-    font-family:'Fraunces', serif;
-    font-size: 22px;
-    font-weight: 400;
-    margin-bottom: 12px;
-  }
+  /* CTA */
+  .cta-section{ background:var(--ink-green); color:var(--cream); padding:90px 0; position:relative; }
+  .cta-section::before{ content:''; position:absolute; top:0; left:0; right:0; height:2px; background:linear-gradient(90deg, transparent, var(--crimson), transparent); }
+  .cta-inner{ display:grid; grid-template-columns:1fr 1fr; gap:56px; align-items:center; }
+  .eyebrow{ font-size:12px; letter-spacing:.16em; text-transform:uppercase; color:var(--cream); opacity:.7; margin-bottom:18px; display:flex; align-items:center; gap:10px; }
+  .eyebrow::before{ content:''; width:26px; height:1px; background:var(--crimson); }
+  h2.cta-headline{ font-family:'Fraunces',serif; font-weight:400; font-size:clamp(28px,4vw,42px); line-height:1.1; margin-bottom:16px; }
+  h2.cta-headline em{ font-style:italic; color:#c9dbb8; }
+  .cta-copy{ font-size:15px; opacity:.82; max-width:420px; margin-bottom: 8px;}
+  .cta-risk-reducer{ font-size: 13px; opacity: .65; margin-top: 10px; }
 
-  .service-desc{
-    font-size: 14.5px;
-    color: var(--ink-green);
-    opacity: 0.85;
-  }
-
-  /* ---------- Portfolio ---------- */
-  .portfolio-grid{
-    display:grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-  }
-
-  .portfolio-item{
-    aspect-ratio: 3/4;
-    background: var(--ink-green);
-    position: relative;
-    border-radius: 2px;
-    overflow: hidden;
-    display:flex;
-    flex-direction:column;
-    justify-content:flex-end;
-    padding: 22px;
-  }
-  .portfolio-item:nth-child(2){ background: var(--forest); }
-  .portfolio-item:nth-child(3){ background: #1c3a17; }
-
-  .portfolio-item::before{
-    content:'';
-    position:absolute; inset:0;
-    background: linear-gradient(180deg, transparent 40%, rgba(0,0,0,0.35) 100%);
-  }
-
-  .portfolio-tag{
-    position:relative; z-index:2;
-    font-size: 11px;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: var(--cream);
-    opacity: 0.85;
-    margin-bottom: 6px;
-  }
-  .portfolio-title{
-    position:relative; z-index:2;
-    font-family:'Fraunces', serif;
-    font-size: 21px;
-    color: var(--cream);
-  }
-
-  /* ---------- Quote / CTA ---------- */
-  .cta-section{
-    background: var(--ink-green);
-    color: var(--cream);
-    padding: 110px 0;
-  }
-
-  .cta-inner{
-    display:grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 64px;
-    align-items: center;
-  }
-
-  .cta-inner .eyebrow{ color: var(--cream); opacity: 0.7; }
-  .cta-inner .eyebrow::before{ background: var(--cream); opacity: 0.5; }
-
-  h2.cta-headline{
-    font-family:'Fraunces', serif;
-    font-weight: 400;
-    font-size: clamp(32px, 4.4vw, 48px);
-    line-height: 1.05;
-    margin-bottom: 20px;
-  }
-  h2.cta-headline em{ font-style: italic; color: #c9dbb8; }
-
-  .cta-copy{
-    font-size: 15.5px;
-    opacity: 0.82;
-    max-width: 420px;
-  }
-
-  form.quote-form{
-    display:flex;
-    flex-direction: column;
-    gap: 14px;
-  }
-
-  .form-row{ display:flex; gap: 14px; }
+  form.quote-form{ display:flex; flex-direction:column; gap:12px; background: rgba(254,246,228,0.05); border: 1px solid rgba(254,246,228,0.15); padding: 28px; border-radius: 3px; }
+  .form-row{ display:flex; gap:12px; }
   .form-row > *{ flex:1; }
+  input, select, textarea{ width:100%; background:rgba(254,246,228,0.07); border:1px solid rgba(254,246,228,0.25); color:var(--cream); padding:13px 15px; font-family:'Inter',sans-serif; font-size:14px; border-radius:2px; }
+  input::placeholder, textarea::placeholder{ color:rgba(254,246,228,0.5); }
+  input:focus, select:focus, textarea:focus{ outline:none; border-color:var(--cream); }
+  .btn-cream{ background:var(--cream); color:var(--ink-green); padding:15px 26px; font-size:13px; font-weight:700; letter-spacing:.06em; text-transform:uppercase; border-radius:2px; border:none; cursor:pointer; transition:background .25s; }
+  .btn-cream:hover{ background:#fff; }
+  .form-note{ font-size:12px; opacity:.55; text-align:center; }
+  .sr-only{ position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0; }
 
-  input, select, textarea{
-    width: 100%;
-    background: rgba(254,246,228,0.06);
-    border: 1px solid rgba(254,246,228,0.25);
-    color: var(--cream);
-    padding: 14px 16px;
-    font-family: 'Inter', sans-serif;
-    font-size: 14px;
-    border-radius: 2px;
-  }
-  input::placeholder, textarea::placeholder{ color: rgba(254,246,228,0.5); }
-  input:focus, select:focus, textarea:focus{
-    outline: none;
-    border-color: var(--cream);
-  }
+  /* Footer */
+  footer{ padding:56px 0 90px; }
+  .footer-top{ display:flex; justify-content:space-between; align-items:flex-start; flex-wrap:wrap; gap:32px; padding-bottom:36px; border-bottom:1px solid rgba(10,13,6,0.1); margin-bottom:24px; }
+  .footer-brand{ display:flex; align-items:center; gap:12px; margin-bottom:10px; }
+  .footer-brand .logo-mark{ width:30px; height:30px; }
+  .footer-wordmark{ font-family:'Fraunces',serif; font-size:19px; }
+  .footer-tagline{ font-size:12.5px; font-style:italic; color:var(--forest); margin-top:4px; }
+  .footer-cols{ display:flex; gap:52px; flex-wrap:wrap; }
+  .footer-col-title{ font-size:10.5px; letter-spacing:.1em; text-transform:uppercase; color:var(--forest); margin-bottom:14px; }
+  .footer-col a, .footer-col span{ display:block; font-size:13.5px; color:var(--ink-green); margin-bottom:9px; opacity:.85; }
+  .footer-col a:hover{ color:var(--forest); }
+  .social-row{ display:flex; gap:12px; margin-top:6px; }
+  .social-icon{ width:32px; height:32px; border-radius:50%; border:1px solid rgba(10,13,6,0.15); display:flex; align-items:center; justify-content:center; transition:.2s; }
+  .social-icon:hover{ background:var(--forest); border-color:var(--forest); }
+  .social-icon:hover svg{ stroke:var(--cream); }
+  .social-icon svg{ width:15px; height:15px; stroke:var(--ink-green); transition:.2s; }
+  .footer-bottom{ display:flex; justify-content:space-between; font-size:11.5px; color:var(--ink-green); opacity:.55; flex-wrap:wrap; gap:10px; }
 
-  textarea{ resize: vertical; min-height: 90px; }
+  /* Sticky mobile tap-to-call bar — mobile only, per research (88% of "near me" searches are mobile) */
+  .mobile-call-bar{ display:none; }
 
-  .btn-cream{
-    background: var(--cream);
-    color: var(--ink-green);
-    padding: 15px 26px;
-    font-size: 13px;
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
-    border-radius: 2px;
-    border: none;
-    cursor: pointer;
-    transition: background 0.25s ease;
-    align-self: flex-start;
-  }
-  .btn-cream:hover{ background: #fff; }
-
-  .form-note{
-    font-size: 12.5px;
-    opacity: 0.6;
-    margin-top: -2px;
-  }
-
-  .sr-only{
-    position: absolute;
-    width: 1px; height: 1px;
-    padding: 0; margin: -1px;
-    overflow: hidden;
-    clip: rect(0,0,0,0);
-    white-space: nowrap;
-    border: 0;
-  }
-
-  /* ---------- Footer ---------- */
-  footer{ padding: 64px 0 40px; }
-
-  .footer-top{
-    display:flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    flex-wrap: wrap;
-    gap: 32px;
-    padding-bottom: 40px;
-    border-bottom: 1px solid rgba(10,13,6,0.1);
-    margin-bottom: 28px;
-  }
-
-  .footer-wordmark{
-    font-family:'Fraunces', serif;
-    font-size: 22px;
-    margin-bottom: 10px;
-  }
-
-  .footer-tagline{
-    font-size: 13px;
-    font-style: italic;
-    color: var(--forest);
-  }
-
-  .footer-cols{ display:flex; gap: 64px; flex-wrap: wrap; }
-
-  .footer-col-title{
-    font-size: 11px;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: var(--forest);
-    margin-bottom: 16px;
-  }
-
-  .footer-col a, .footer-col span{
-    display:block;
-    font-size: 14px;
-    color: var(--ink-green);
-    margin-bottom: 10px;
-    opacity: 0.85;
-  }
-  .footer-col a:hover{ color: var(--forest); }
-
-  .footer-bottom{
-    display:flex;
-    justify-content: space-between;
-    font-size: 12px;
-    color: var(--ink-green);
-    opacity: 0.55;
-    flex-wrap: wrap;
-    gap: 10px;
-  }
-
-  /* ---------- Responsive ---------- */
-  @media (max-width: 860px){
+  @media (max-width:860px){
     nav{ display:none; }
-    .hero-grid{ grid-template-columns: 1fr; }
-    .hero-image{ order:-1; aspect-ratio: 16/10; }
-    .services-grid{ grid-template-columns: 1fr; }
-    .portfolio-grid{ grid-template-columns: 1fr; }
-    .cta-inner{ grid-template-columns: 1fr; }
-    .form-row{ flex-direction: column; }
+    .header-phone{ display:none; }
+    .brand-sub{ display:none; }
+    .services-grid{ grid-template-columns:1fr; }
+    .proof-grid{ grid-template-columns:1fr; }
+    .process-grid{ grid-template-columns:1fr 1fr; }
+    .why-grid{ grid-template-columns:1fr; }
+    .portfolio-grid{ grid-template-columns:1fr; }
+    .cta-inner{ grid-template-columns:1fr; }
+    .form-row{ flex-direction:column; }
     .section-meta{ text-align:left; }
     .footer-top{ flex-direction:column; }
+
+    body{ padding-bottom: 64px; }
+    .mobile-call-bar{
+      display:flex; position:fixed; bottom:0; left:0; right:0; z-index:100;
+      background: var(--forest); padding: 14px 20px; align-items:center; justify-content:center; gap:10px;
+      box-shadow: 0 -4px 16px rgba(0,0,0,0.15);
+    }
+    .mobile-call-bar a{ color: var(--cream); font-weight:700; font-size:15px; display:flex; align-items:center; gap:9px; }
+    .mobile-call-bar svg{ width:19px; height:19px; stroke:var(--cream); }
   }
 </style>
 </head>
@@ -481,40 +211,60 @@
 
 <header>
   <div class="wrap header-inner">
-    <div class="wordmark">Fanelli Precision</div>
-    <nav>
-      <a class="nav-link" href="services.html">Services</a>
-      <a class="nav-link" href="portfolio.html">Portfolio</a>
-      <a class="nav-link" href="about.html">About</a>
+    <a class="brand-link" href="index.html">
+      <img class="logo-mark" src="images/logo.png" alt="Fannelli Precision logo" onerror="this.src='favicon-32.png'">
+      <div class="brand-text">
+        <span class="brand-name">Fannelli Precision</span>
+        <span class="brand-sub">Commercial &amp; Residential General Contracting</span>
+      </div>
+    </a>
+    <div class="header-cta-group">
+      <nav>
+        <a class="nav-link" href="services.html">Services</a>
+        <a class="nav-link" href="portfolio.html">Portfolio</a>
+        <a class="nav-link" href="about.html">About</a>
+      </nav>
+      <a class="header-phone" href="tel:+12233277915">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        (223) 327-7915
+      </a>
       <a class="btn" href="quote.html">Request a Quote</a>
-    </nav>
+    </div>
   </div>
 </header>
 
 <section class="hero">
-  <div class="wrap hero-grid">
-    <div>
-      <div class="eyebrow">Camp Hill · Mechanicsburg · Hampden · Harrisburg Corridor</div>
-      <h1 class="headline">Precisione.<br>Passione.<br><em>Fanelli.</em></h1>
-      <p class="hero-sub">Residential renovation and restoration, built to a standard most contractors don't hold themselves to. Tile, remodels, structural work — done once, done right.</p>
-      <div class="hero-cta-row">
-        <a class="btn" href="quote.html">Request a Quote</a>
-        <span class="hero-cta-note">Response within 10 minutes on active inquiries.</span>
-      </div>
+  <div class="hero-bg"></div>
+  <div class="wrap hero-content">
+    <div class="hero-badges">
+      <span class="hero-badge">Licensed &amp; Insured</span>
+      <span class="hero-badge">Fixed-Price Guarantee</span>
     </div>
-    <div class="hero-image">
-      <div class="hero-image-caption">Recent work — bathroom remodel, Camp Hill</div>
+    <h1 class="headline">Central PA general contracting, <em>held to a standard</em> most skip.</h1>
+    <p class="hero-sub">Fixed-price estimates. Materials locked before demo. Every hidden condition disclosed, never absorbed. Serving Harrisburg Area, West Shore &amp; Carlisle Area.</p>
+    <div class="hero-cta-row">
+      <a class="btn btn-lg" href="quote.html">Get a Free Estimate</a>
+      <a class="btn-outline-cream" href="tel:+12233277915">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        Call (223) 327-7915
+      </a>
     </div>
+    <p class="hero-note">No obligation · Inquiries answered same day</p>
   </div>
 </section>
 
 <div class="trust-bar">
   <div class="wrap trust-inner">
-    <div class="trust-item"><span class="dot"></span>Licensed &amp; insured</div>
-    <div class="trust-item"><span class="dot"></span>West Shore PA service area</div>
-    <div class="trust-item"><span class="dot"></span>Fixed-price, written estimates</div>
-    <div class="trust-item"><span class="dot"></span>Owner-operated on every job</div>
+    <div class="trust-item"><span class="dot"></span>Licensed &amp; Insured</div>
+    <div class="trust-item"><span class="dot"></span>Owner-Operated On Every Job</div>
+    <div class="trust-item"><span class="dot"></span>Fixed-Price Written Estimates</div>
+    <div class="trust-item"><span class="dot"></span>Materials Locked Before Demo</div>
+    <div class="trust-item"><span class="dot"></span>Same-Day Response</div>
   </div>
+</div>
+
+<div class="lang-strip">
+  <span>Se habla español · नेपाली बोलिन्छ · <strong>English, Spanish &amp; Nepali spoken</strong></span>
 </div>
 
 <section id="services">
@@ -522,7 +272,7 @@
     <div class="section-head">
       <div>
         <div class="section-label">What we do</div>
-        <h2 class="section-title">Renovation and restoration, handled end to end.</h2>
+        <h2 class="section-title">Commercial &amp; residential contracting, handled end to end.</h2>
       </div>
       <p class="section-meta">Each project is scoped, quoted, and scheduled before a single tool touches the site.</p>
     </div>
@@ -546,28 +296,117 @@
   </div>
 </section>
 
+<section class="proof-section">
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        <div class="section-label">Proof, not promises</div>
+        <h2 class="section-title">See the difference, hear it from the client.</h2>
+      </div>
+    </div>
+    <div class="proof-grid">
+      <div class="before-after">
+        <div class="ba-panel" style="background-image:url('images/before-1.jpg');"><span class="ba-label">Before</span></div>
+        <div class="ba-panel" style="background-image:url('images/after-1.jpg');"><span class="ba-label">After</span></div>
+      </div>
+      <div>
+        <span class="testimonial-stars">★★★★★</span>
+        <p class="testimonial-quote">"Finished our bathroom exactly on the fixed-price quote, no surprises, no delays. Showed up when they said they would — every time."</p>
+        <div class="testimonial-author">— Camp Hill Homeowner, Bathroom Remodel</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="process">
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        <div class="section-label">How it works</div>
+        <h2 class="section-title">From first call to finished project.</h2>
+      </div>
+    </div>
+    <div class="process-grid">
+      <div class="process-step">
+        <div class="process-num">01</div>
+        <div class="process-name">Request a Quote</div>
+        <div class="process-desc">Tell us about your project — answered same day.</div>
+      </div>
+      <div class="process-step">
+        <div class="process-num">02</div>
+        <div class="process-name">Walkthrough &amp; Estimate</div>
+        <div class="process-desc">We assess the space and provide a fixed-price written quote.</div>
+      </div>
+      <div class="process-step">
+        <div class="process-num">03</div>
+        <div class="process-name">Materials Locked</div>
+        <div class="process-desc">Tile, fixtures, and materials finalized before any demo begins.</div>
+      </div>
+      <div class="process-step">
+        <div class="process-num">04</div>
+        <div class="process-name">Build &amp; Deliver</div>
+        <div class="process-desc">Work completed on schedule, on the price we quoted.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="why-section">
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        <div class="section-label">Why Fannelli Precision</div>
+        <h2 class="section-title">What actually sets us apart.</h2>
+      </div>
+    </div>
+    <div class="why-grid">
+      <div class="why-card">
+        <svg class="why-icon" viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg>
+        <div class="why-title">Fixed-Price Guarantee</div>
+        <div class="why-desc">The number we quote is the number you pay — hidden conditions are disclosed, never absorbed.</div>
+      </div>
+      <div class="why-card">
+        <svg class="why-icon" viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        <div class="why-title">Same-Day Response</div>
+        <div class="why-desc">Every inquiry gets a real, direct response the same day — not a form letter, not a week of silence.</div>
+      </div>
+      <div class="why-card">
+        <svg class="why-icon" viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+        <div class="why-title">Owner-Operated</div>
+        <div class="why-desc">Direct accountability on every job — the name on the quote is the person on your site.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section id="portfolio">
   <div class="wrap">
     <div class="section-head">
       <div>
         <div class="section-label">Recent projects</div>
-        <h2 class="section-title"><a href="portfolio.html" style="text-decoration:underline;">A small sample of finished work →</a></h2>
+        <h2 class="section-title"><a href="portfolio.html" style="text-decoration:underline;">A record of finished work →</a></h2>
       </div>
-      <p class="section-meta">Full portfolio, including before/after detail, available on request.</p>
+      <p class="section-meta">Every project scoped, quoted, and completed on schedule — full portfolio available on request.</p>
     </div>
     <div class="portfolio-grid">
-      <div class="portfolio-item">
-        <div class="portfolio-tag">Bathroom Remodel</div>
-        <div class="portfolio-title">Camp Hill</div>
-      </div>
-      <div class="portfolio-item">
-        <div class="portfolio-tag">Full Renovation</div>
-        <div class="portfolio-title">Mechanicsburg</div>
-      </div>
-      <div class="portfolio-item">
-        <div class="portfolio-tag">Tile &amp; Finish</div>
-        <div class="portfolio-title">Hampden Township</div>
-      </div>
+      <div class="portfolio-item" style="background-image: linear-gradient(180deg, transparent 40%, rgba(0,0,0,0.5) 100%), url('images/portfolio-1.jpg');"><div class="portfolio-tag">Bathroom Remodel</div><div class="portfolio-title">West Shore</div></div>
+      <div class="portfolio-item" style="background-image: linear-gradient(180deg, transparent 40%, rgba(0,0,0,0.5) 100%), url('images/portfolio-2.jpg');"><div class="portfolio-tag">Full Renovation</div><div class="portfolio-title">Harrisburg Area</div></div>
+      <div class="portfolio-item" style="background-image: linear-gradient(180deg, transparent 40%, rgba(0,0,0,0.5) 100%), url('images/portfolio-3.jpg');"><div class="portfolio-tag">Tile &amp; Finish</div><div class="portfolio-title">Carlisle Area</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="area-section">
+  <div class="wrap">
+    <div class="section-label">Service area</div>
+    <h2 class="section-title">Proudly serving Central Pennsylvania.</h2>
+    <div class="area-list">
+      <span class="area-pill">Harrisburg Area</span>
+      <span class="area-pill">West Shore</span>
+      <span class="area-pill">Carlisle Area</span>
+      <span class="area-pill">Camp Hill</span>
+      <span class="area-pill">Mechanicsburg</span>
+      <span class="area-pill">Hampden Township</span>
     </div>
   </div>
 </section>
@@ -576,8 +415,9 @@
   <div class="wrap cta-inner">
     <div>
       <div class="eyebrow">Start a project</div>
-      <h2 class="cta-headline">Tell us what you're working on. <em>We'll respond fast.</em></h2>
-      <p class="cta-copy">Every inquiry gets a real response — not a form letter. Give us the basics and we'll follow up with next steps, usually the same day.</p>
+      <h2 class="cta-headline">Tell us what you're building. <em>We answer same day.</em></h2>
+      <p class="cta-copy">Every inquiry gets a direct, personal response — not a form letter.</p>
+      <p class="cta-risk-reducer">No obligation. No spam. No pressure — just a real answer from a real person.</p>
     </div>
     <form class="quote-form" action="https://formspree.io/f/xykqblgq" method="POST">
       <input type="hidden" name="form_type" value="Quote Request (Home)">
@@ -587,8 +427,6 @@
         <label for="hero-phone" class="sr-only">Phone number</label>
         <input id="hero-phone" type="tel" name="phone" placeholder="Phone number" required>
       </div>
-      <label for="hero-email" class="sr-only">Email address</label>
-      <input id="hero-email" type="email" name="email" placeholder="Email address" required>
       <label for="hero-project" class="sr-only">Project type</label>
       <select id="hero-project" name="project_type" required>
         <option value="" disabled selected>Project type</option>
@@ -596,12 +434,11 @@
         <option>Kitchen Remodel</option>
         <option>Restoration / Repair</option>
         <option>Tile Work</option>
+        <option>Commercial Project</option>
         <option>Other</option>
       </select>
-      <label for="hero-details" class="sr-only">Project details</label>
-      <textarea id="hero-details" name="details" placeholder="Briefly describe the project and timeline"></textarea>
-      <button class="btn-cream" type="submit">Request a Quote</button>
-      <p class="form-note">Submissions route directly to our inbox — no spam, no follow-up calls unless you ask.</p>
+      <button class="btn-cream" type="submit">Get My Free Estimate</button>
+      <p class="form-note">3 fields. Under a minute. We'll call to confirm the details.</p>
     </form>
   </div>
 </section>
@@ -610,8 +447,11 @@
   <div class="wrap">
     <div class="footer-top">
       <div>
-        <div class="footer-wordmark">Fanelli Precision</div>
-        <div class="footer-tagline">Precisione. Passione. Fanelli.</div>
+        <div class="footer-brand">
+          <img class="logo-mark" src="images/logo.png" alt="Fannelli Precision logo" onerror="this.src='favicon-32.png'">
+          <span class="footer-wordmark">Fannelli Precision</span>
+        </div>
+        <div class="footer-tagline">Precisione. Passione. Fannelli.</div>
       </div>
       <div class="footer-cols">
         <div class="footer-col">
@@ -623,25 +463,43 @@
         </div>
         <div class="footer-col">
           <div class="footer-col-title">Service Area</div>
-          <span>Camp Hill</span>
-          <span>Mechanicsburg</span>
-          <span>Hampden Township</span>
-          <span>Harrisburg Corridor</span>
+          <span>Central Pennsylvania</span>
+          <span>Harrisburg Area</span>
+          <span>West Shore</span>
+          <span>Carlisle Area</span>
         </div>
         <div class="footer-col">
-          <div class="footer-col-title">Contact</div>
-          <a href="mailto:info@fanelliprecision.com">info@fanelliprecision.com</a>
+          <div class="footer-col-title">Connect</div>
+          <a href="tel:+12233277915">(223) 327-7915</a>
+          <a href="mailto:FannelliPrecision@gmail.com">FannelliPrecision@gmail.com</a>
           <a href="quote.html">Request a Quote</a>
-          <a href="#">Google Business</a>
+          <div class="social-row">
+            <a class="social-icon" href="https://www.facebook.com/profile.php?id=61578901092449" target="_blank" rel="noopener" aria-label="Facebook" title="Facebook">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+            </a>
+            <a class="social-icon" href="https://www.instagram.com/fannelli_precision?igsh=MWRyaXB4ZGpwbDRxMg%3D%3D&utm_source=qr" target="_blank" rel="noopener" aria-label="Instagram" title="Instagram">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><line x1="17.5" y1="6.5" x2="17.5" y2="6.5"/></svg>
+            </a>
+            <a class="social-icon" href="https://www.tiktok.com/@fannelli.precision?_r=1&_t=ZP-97tgjKrZr1L" target="_blank" rel="noopener" aria-label="TikTok" title="TikTok">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"/></svg>
+            </a>
+          </div>
         </div>
       </div>
     </div>
     <div class="footer-bottom">
-      <span>© 2026 Fanelli Precision. All rights reserved.</span>
-      <span>Owner-operated · West Shore PA</span>
+      <span>© 2026 Fannelli Precision. All rights reserved.</span>
+      <span>Owner-operated · Central Pennsylvania</span>
     </div>
   </div>
 </footer>
+
+<div class="mobile-call-bar">
+  <a href="tel:+12233277915">
+    <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+    Call Now — (223) 327-7915
+  </a>
+</div>
 
 </body>
 </html>
