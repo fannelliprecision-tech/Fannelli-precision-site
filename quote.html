@@ -3,11 +3,12 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Request a Quote — Fanelli Precision</title>
-<meta name="description" content="Request a fixed-price quote for your renovation or restoration project. Response within 10 minutes on active inquiries.">
+<title>Request a Quote — Fannelli Precision</title>
+<meta name="description" content="Request a written estimate for your renovation or restoration project. Serving Central Pennsylvania.">
+<link rel="icon" type="image/png" href="favicon-32.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
   :root{
     --cream: #fef6e4; --ink: #0a0d06; --ink-green: #12210c;
@@ -19,55 +20,73 @@
   .wrap{ max-width: var(--max); margin:0 auto; padding: 0 32px; }
 
   header{ border-bottom:1px solid rgba(254,246,228,0.12); }
-  .header-inner{ display:flex; align-items:center; justify-content:space-between; padding:22px 0; }
-  .wordmark{ font-family:'Fraunces',serif; font-weight:500; font-size:19px; }
-  nav{ display:flex; align-items:center; gap:36px; }
-  nav a.nav-link{ font-size:13px; letter-spacing:0.08em; text-transform:uppercase; color:var(--cream); opacity:.7; transition:opacity .2s; }
+  .header-inner{ display:flex; align-items:center; justify-content:space-between; padding:14px 0; }
+  .brand-link{ display:flex; align-items:center; gap:12px; }
+  .logo-mark{ width:36px; height:36px; flex-shrink:0; object-fit: contain; }
+  .brand-text{ display:flex; flex-direction:column; line-height:1.25; }
+  .brand-name{ font-family:'Fraunces',serif; font-weight:500; font-size:17px; color: var(--cream); }
+  .brand-sub{ font-family:'Inter',sans-serif; font-size:10px; letter-spacing:.04em; color:var(--cream); opacity:.65; }
+  nav{ display:flex; align-items:center; gap:28px; }
+  nav a.nav-link{ font-size:13px; letter-spacing:0.06em; text-transform:uppercase; color:var(--cream); opacity:.75; transition:opacity .2s; }
   nav a.nav-link:hover{ opacity:1; }
-  .btn-cream{ display:inline-block; padding:12px 26px; background:var(--cream); color:var(--ink-green); font-size:13px; letter-spacing:.06em; text-transform:uppercase; border-radius:2px; }
-  .btn-cream:hover{ background:#fff; }
+  .btn-cream-outline{ display:inline-flex; align-items:center; gap:8px; padding:11px 22px; border:1px solid rgba(254,246,228,0.4); color:var(--cream); font-size:13px; font-weight:600; letter-spacing:.05em; text-transform:uppercase; border-radius:2px; }
+  .btn-cream-outline:hover{ background: rgba(254,246,228,0.08); }
+  .header-phone{ display:flex; align-items:center; gap:7px; font-weight:600; font-size:14px; color:var(--cream); }
+  .header-phone svg{ width:15px; height:15px; stroke:var(--cream); }
+  .header-cta-group{ display:flex; align-items:center; gap:18px; }
 
-  .quote-hero{ padding: 72px 0 48px; }
-  .eyebrow{ font-size:12px; letter-spacing:.16em; text-transform:uppercase; opacity:.65; margin-bottom:18px; display:flex; align-items:center; gap:10px; }
-  .eyebrow::before{ content:''; width:28px; height:1px; background: var(--cream); opacity:.5; }
-  h1.page-title{ font-family:'Fraunces',serif; font-weight:400; font-size:clamp(36px,5vw,54px); line-height:1.05; max-width:600px; margin-bottom:16px; }
-  .page-sub{ font-size:15.5px; opacity:.8; max-width:460px; }
+  .quote-hero{ padding:56px 0 40px; }
+  .eyebrow{ font-size:12px; letter-spacing:.16em; text-transform:uppercase; opacity:.65; margin-bottom:16px; display:flex; align-items:center; gap:10px; }
+  .eyebrow::before{ content:''; width:26px; height:1px; background:var(--cream); opacity:.5; }
+  h1.page-title{ font-family:'Fraunces',serif; font-weight:400; font-size:clamp(32px,4.6vw,48px); line-height:1.08; max-width:600px; margin-bottom:14px; }
+  .page-sub{ font-size:15px; opacity:.8; max-width:460px; }
 
-  .quote-body{ padding-bottom: 100px; display:grid; grid-template-columns: 1fr 1.3fr; gap: 64px; }
-  .side-info{ padding-top: 8px; }
-  .info-block{ margin-bottom: 36px; }
-  .info-label{ font-size:11px; letter-spacing:.1em; text-transform:uppercase; opacity:.6; margin-bottom:10px; }
-  .info-value{ font-size:15px; opacity:.9; }
+  .quote-body{ padding-bottom:90px; display:grid; grid-template-columns:1fr 1.3fr; gap:56px; }
+  .side-info{ padding-top:8px; }
+  .info-block{ margin-bottom:32px; }
+  .info-label{ font-size:11px; letter-spacing:.1em; text-transform:uppercase; opacity:.6; margin-bottom:9px; }
+  .info-value{ font-size:14.5px; opacity:.9; }
 
-  form.quote-form{ display:flex; flex-direction:column; gap:16px; background: rgba(254,246,228,0.04); border:1px solid rgba(254,246,228,0.14); padding: 36px; border-radius: 2px; }
-  .form-row{ display:flex; gap:16px; }
+  form.quote-form{ display:flex; flex-direction:column; gap:14px; background:rgba(254,246,228,0.04); border:1px solid rgba(254,246,228,0.14); padding:32px; border-radius:2px; }
+  .form-row{ display:flex; gap:14px; }
   .form-row > *{ flex:1; }
-  label{ font-size:12px; letter-spacing:.05em; text-transform:uppercase; opacity:.65; margin-bottom:6px; display:block; }
+  label{ font-size:12px; letter-spacing:.05em; text-transform:uppercase; opacity:.65; margin-bottom:5px; display:block; }
   input, select, textarea{
-    width:100%; background: rgba(254,246,228,0.06); border:1px solid rgba(254,246,228,0.25);
-    color: var(--cream); padding:14px 16px; font-family:'Inter',sans-serif; font-size:14px; border-radius:2px;
+    width:100%; background:rgba(254,246,228,0.06); border:1px solid rgba(254,246,228,0.25);
+    color:var(--cream); padding:13px 15px; font-family:'Inter',sans-serif; font-size:14px; border-radius:2px;
   }
-  input::placeholder, textarea::placeholder{ color: rgba(254,246,228,0.4); }
-  input:focus, select:focus, textarea:focus{ outline:none; border-color: var(--cream); }
-  textarea{ resize:vertical; min-height:110px; }
-  .field-group{ display:flex; flex-direction:column; }
-  select option{ background: var(--ink-green); }
+  input::placeholder, textarea::placeholder{ color:rgba(254,246,228,0.4); }
+  input:focus, select:focus, textarea:focus{ outline:none; border-color:var(--cream); }
+  textarea{ resize:vertical; min-height:100px; }
+  select option{ background:var(--ink-green); }
 
   .submit-btn{
-    background: var(--cream); color: var(--ink-green); padding:16px 26px; font-size:13px;
+    background:var(--cream); color:var(--ink-green); padding:15px 26px; font-size:13px; font-weight:700;
     letter-spacing:.06em; text-transform:uppercase; border-radius:2px; border:none; cursor:pointer;
-    transition: background .25s; margin-top: 8px;
+    transition:background .25s; margin-top:6px;
   }
   .submit-btn:hover{ background:#fff; }
-  .form-note{ font-size:12.5px; opacity:.55; text-align:center; }
+  .form-note{ font-size:12px; opacity:.55; text-align:center; }
 
-  footer{ padding: 40px 0; border-top:1px solid rgba(254,246,228,0.12); }
+  footer{ padding:32px 0; border-top:1px solid rgba(254,246,228,0.12); }
   .footer-bottom{ display:flex; justify-content:space-between; font-size:12px; opacity:.5; flex-wrap:wrap; gap:10px; }
+
+  .mobile-call-bar{ display:none; }
 
   @media (max-width:860px){
     nav{ display:none; }
-    .quote-body{ grid-template-columns: 1fr; }
+    .header-phone{ display:none; }
+    .brand-sub{ display:none; }
+    .quote-body{ grid-template-columns:1fr; }
     .form-row{ flex-direction:column; }
+    body{ padding-bottom: 64px; }
+    .mobile-call-bar{
+      display:flex; position:fixed; bottom:0; left:0; right:0; z-index:100;
+      background: var(--forest); padding: 14px 20px; align-items:center; justify-content:center; gap:10px;
+      box-shadow: 0 -4px 16px rgba(0,0,0,0.15);
+    }
+    .mobile-call-bar a{ color: var(--cream); font-weight:700; font-size:15px; display:flex; align-items:center; gap:9px; }
+    .mobile-call-bar svg{ width:19px; height:19px; stroke:var(--cream); }
   }
 </style>
 </head>
@@ -75,21 +94,33 @@
 
 <header>
   <div class="wrap header-inner">
-    <a class="wordmark" href="index.html">Fanelli Precision</a>
-    <nav>
-      <a class="nav-link" href="services.html">Services</a>
-      <a class="nav-link" href="portfolio.html">Portfolio</a>
-      <a class="nav-link" href="about.html">About</a>
-    </nav>
-    <a class="btn-cream" href="index.html">← Home</a>
+    <a class="brand-link" href="index.html">
+      <img class="logo-mark" src="logo.png" alt="Fannelli Precision logo" onerror="this.src='favicon-32.png'">
+      <div class="brand-text">
+        <span class="brand-name">Fannelli Precision</span>
+        <span class="brand-sub">Commercial &amp; Residential General Contracting</span>
+      </div>
+    </a>
+    <div class="header-cta-group">
+      <nav>
+        <a class="nav-link" href="services.html">Services</a>
+        <a class="nav-link" href="portfolio.html">Portfolio</a>
+        <a class="nav-link" href="about.html">About</a>
+      </nav>
+      <a class="header-phone" href="tel:+12233277915">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        (223) 327-7915
+      </a>
+      <a class="btn-cream-outline" href="index.html">← Home</a>
+    </div>
   </div>
 </header>
 
 <section class="quote-hero">
   <div class="wrap">
     <div class="eyebrow">Start a project</div>
-    <h1 class="page-title">Request a fixed-price quote.</h1>
-    <p class="page-sub">Tell us about your project. Every inquiry gets a real, direct response — usually within 10 minutes during business hours.</p>
+    <h1 class="page-title">Request a written estimate.</h1>
+    <p class="page-sub">Tell us about your project. Every inquiry gets a real, direct response — usually the same day.</p>
   </div>
 </section>
 
@@ -99,43 +130,47 @@
     <div class="side-info">
       <div class="info-block">
         <div class="info-label">What happens next</div>
-        <div class="info-value">We review your project details, and follow up directly to schedule a walkthrough and provide a fixed-price written estimate.</div>
+        <div class="info-value">We review your project details and follow up directly to schedule a walkthrough and provide a detailed written estimate.</div>
       </div>
       <div class="info-block">
         <div class="info-label">Service area</div>
-        <div class="info-value">Camp Hill · Mechanicsburg · Hampden Township · Harrisburg Corridor</div>
+        <div class="info-value">Harrisburg Area · West Shore · Carlisle Area · Central Pennsylvania</div>
+      </div>
+      <div class="info-block">
+        <div class="info-label">Languages spoken</div>
+        <div class="info-value">English, Spanish &amp; Nepali</div>
       </div>
       <div class="info-block">
         <div class="info-label">Direct contact</div>
-        <div class="info-value">info@fanelliprecision.com</div>
+        <div class="info-value">(223) 327-7915<br>FannelliPrecision@gmail.com</div>
       </div>
     </div>
 
     <form class="quote-form" action="https://formspree.io/f/xykqblgq" method="POST">
-      <input type="hidden" name="form_type" value="Quote Request">
+      <input type="hidden" name="form_type" value="Quote Request (Dedicated Page)">
       <div class="form-row">
-        <div class="field-group">
+        <div>
           <label for="name">Full name</label>
           <input id="name" type="text" name="name" placeholder="Jane Smith" required>
         </div>
-        <div class="field-group">
+        <div>
           <label for="phone">Phone number</label>
-          <input id="phone" type="tel" name="phone" placeholder="(717) 555-0100" required>
+          <input id="phone" type="tel" name="phone" placeholder="(223) 555-0100" required>
         </div>
       </div>
 
-      <div class="field-group">
+      <div>
         <label for="email">Email address</label>
         <input id="email" type="email" name="email" placeholder="you@email.com" required>
       </div>
 
-      <div class="field-group">
+      <div>
         <label for="address">Property address / town</label>
         <input id="address" type="text" name="address" placeholder="Camp Hill, PA">
       </div>
 
       <div class="form-row">
-        <div class="field-group">
+        <div>
           <label for="project_type">Project type</label>
           <select id="project_type" name="project_type" required>
             <option value="" disabled selected>Select one</option>
@@ -144,34 +179,23 @@
             <option>Restoration / Repair</option>
             <option>Tile Work</option>
             <option>General Renovation</option>
+            <option>Commercial Project</option>
             <option>Other</option>
           </select>
         </div>
-        <div class="field-group">
-          <label for="budget">Estimated budget range</label>
-          <select id="budget" name="budget">
+        <div>
+          <label for="timeline">Desired timeline</label>
+          <select id="timeline" name="timeline">
             <option value="" disabled selected>Select one</option>
-            <option>Under $5,000</option>
-            <option>$5,000 – $15,000</option>
-            <option>$15,000 – $30,000</option>
-            <option>$30,000+</option>
-            <option>Not sure yet</option>
+            <option>As soon as possible</option>
+            <option>Within 1 month</option>
+            <option>1–3 months</option>
+            <option>Just planning ahead</option>
           </select>
         </div>
       </div>
 
-      <div class="field-group">
-        <label for="timeline">Desired timeline</label>
-        <select id="timeline" name="timeline">
-          <option value="" disabled selected>Select one</option>
-          <option>As soon as possible</option>
-          <option>Within 1 month</option>
-          <option>1–3 months</option>
-          <option>Just planning ahead</option>
-        </select>
-      </div>
-
-      <div class="field-group">
+      <div>
         <label for="details">Project details</label>
         <textarea id="details" name="details" placeholder="Tell us what you're working on..."></textarea>
       </div>
@@ -185,10 +209,17 @@
 
 <footer>
   <div class="wrap footer-bottom">
-    <span>© 2026 Fanelli Precision. All rights reserved.</span>
-    <span>Owner-operated · West Shore PA</span>
+    <span>© 2026 Fannelli Precision. All rights reserved.</span>
+    <span>Owner-Managed · Central Pennsylvania</span>
   </div>
 </footer>
+
+<div class="mobile-call-bar">
+  <a href="tel:+12233277915">
+    <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+    Call Now — (223) 327-7915
+  </a>
+</div>
 
 </body>
 </html>
