@@ -18,7 +18,7 @@
   body{ background: var(--cream); color: var(--ink); font-family:'Inter',-apple-system,sans-serif; line-height:1.6; -webkit-font-smoothing: antialiased; }
   a{ color: inherit; text-decoration: none; }
   .wrap{ max-width: var(--max); margin:0 auto; padding: 0 32px; }
- 
+
   header{ position:sticky; top:0; z-index:50; background:rgba(254,246,228,0.95); backdrop-filter:blur(6px); border-bottom:1px solid rgba(10,13,6,0.08); }
   .header-inner{ display:flex; align-items:center; justify-content:space-between; padding:14px 0; }
   .brand-link{ display:flex; align-items:center; gap:12px; }
@@ -35,29 +35,33 @@
   .header-phone svg{ width:16px; height:16px; stroke:var(--forest); }
   .btn{ display:inline-block; padding:11px 24px; background:var(--forest); color:var(--cream); font-size:13px; font-weight:600; letter-spacing:.05em; text-transform:uppercase; border-radius:2px; transition:.25s; white-space:nowrap; }
   .btn:hover{ background:var(--ink-green); transform:translateY(-1px); }
- 
-  .page-hero{ padding:64px 0 44px; }
+
+  .page-hero{ padding:64px 0 36px; }
   .eyebrow{ font-size:12px; letter-spacing:.16em; text-transform:uppercase; color:var(--forest); margin-bottom:16px; display:flex; align-items:center; gap:10px; }
   .eyebrow::before{ content:''; width:26px; height:1px; background:var(--crimson); }
   h1.page-title{ font-family:'Fraunces',serif; font-weight:400; font-size:clamp(34px,4.8vw,52px); line-height:1.08; max-width:640px; margin-bottom:16px; }
   .page-sub{ font-size:15.5px; color:var(--ink-green); max-width:480px; opacity:.85; }
- 
+
   .filter-row{ display:flex; gap:10px; flex-wrap:wrap; padding-bottom:36px; }
-  .filter-tag{ font-size:12px; letter-spacing:.05em; text-transform:uppercase; padding:9px 16px; border:1px solid rgba(10,13,6,0.2); border-radius:20px; color:var(--ink-green); }
+  .filter-tag{ font-size:12px; letter-spacing:.05em; text-transform:uppercase; padding:9px 16px; border:1px solid rgba(10,13,6,0.2); border-radius:20px; color:var(--ink-green); background:none; cursor:pointer; font-family:'Inter',sans-serif; transition:.2s; }
+  .filter-tag:hover{ border-color: var(--forest); }
   .filter-tag.active{ background:var(--forest); color:var(--cream); border-color:var(--forest); }
- 
+
   .portfolio-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:20px; padding-bottom:90px; }
-  .portfolio-item{ aspect-ratio:3/4; background-size:cover; background-position:center; background-color:var(--ink-green); position:relative; border-radius:2px; overflow:hidden; display:flex; flex-direction:column; justify-content:flex-end; padding:20px; }
-  .portfolio-item::before{ content:''; position:absolute; inset:0; background:linear-gradient(180deg,transparent 40%,rgba(0,0,0,0.5) 100%); }
+  .portfolio-item{ aspect-ratio:3/4; background-size:cover; background-position:center; background-color:var(--ink-green); position:relative; border-radius:2px; overflow:hidden; display:flex; flex-direction:column; justify-content:flex-end; padding:20px; cursor:pointer; border:none; text-align:left; transition: transform .2s; }
+  .portfolio-item:hover{ transform: translateY(-3px); }
+  .portfolio-item::before{ content:''; position:absolute; inset:0; background:linear-gradient(180deg,transparent 40%,rgba(0,0,0,0.55) 100%); }
   .portfolio-tag{ position:relative; z-index:2; font-size:11px; letter-spacing:.1em; text-transform:uppercase; color:var(--cream); opacity:.85; margin-bottom:5px; }
   .portfolio-title{ position:relative; z-index:2; font-family:'Fraunces',serif; font-size:19px; color:var(--cream); }
- 
+  .media-count{ position:relative; z-index:2; font-size:11px; color:var(--cream); opacity:.7; margin-top:4px; }
+  .portfolio-item.hidden{ display:none; }
+
   .cta-strip{ background:var(--ink-green); color:var(--cream); padding:56px 0; }
   .cta-strip-inner{ display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:24px; }
   .cta-strip h3{ font-family:'Fraunces',serif; font-weight:400; font-size:26px; }
   .btn-cream{ background:var(--cream); color:var(--ink-green); padding:14px 26px; font-size:13px; font-weight:700; letter-spacing:.06em; text-transform:uppercase; border-radius:2px; }
   .btn-cream:hover{ background:#fff; }
- 
+
   footer{ padding:56px 0 40px; }
   .footer-top{ display:flex; justify-content:space-between; align-items:flex-start; flex-wrap:wrap; gap:32px; padding-bottom:36px; border-bottom:1px solid rgba(10,13,6,0.1); margin-bottom:24px; }
   .footer-brand{ display:flex; align-items:center; gap:12px; margin-bottom:10px; }
@@ -74,14 +78,47 @@
   .social-icon:hover svg{ stroke:var(--cream); }
   .social-icon svg{ width:15px; height:15px; stroke:var(--ink-green); transition:.2s; }
   .footer-bottom{ display:flex; justify-content:space-between; font-size:11.5px; color:var(--ink-green); opacity:.55; flex-wrap:wrap; gap:10px; }
- 
+
   .mobile-call-bar{ display:none; }
- 
+
+  /* Lightbox */
+  .lightbox-overlay{
+    display:none; position:fixed; inset:0; z-index:200; background:rgba(10,13,6,0.92);
+    padding: 40px 20px; overflow-y:auto;
+  }
+  .lightbox-overlay.open{ display:block; }
+  .lightbox-box{ max-width: 920px; margin: 0 auto; background: var(--cream); border-radius:3px; overflow:hidden; }
+  .lightbox-close{
+    position:sticky; top:16px; float:right; margin-right:16px; margin-top:16px; z-index:5;
+    width:36px; height:36px; border-radius:50%; background:var(--ink); color:var(--cream);
+    border:none; font-size:18px; cursor:pointer; display:flex; align-items:center; justify-content:center;
+  }
+  .lightbox-header{ padding: 32px 36px 8px; }
+  .lightbox-tag{ font-size:11.5px; letter-spacing:.1em; text-transform:uppercase; color:var(--forest); margin-bottom:8px; }
+  .lightbox-title{ font-family:'Fraunces',serif; font-size:28px; margin-bottom:6px; }
+  .lightbox-location{ font-size:13.5px; color:var(--ink-green); opacity:.75; margin-bottom: 20px; }
+
+  .lightbox-ba{ padding: 0 36px; display:flex; flex-direction:column; gap: 24px; }
+  .ba-pair-label{ font-size:12px; font-weight:600; color:var(--ink-green); margin-bottom:8px; }
+  .ba-pair-grid{ display:grid; grid-template-columns:1fr 1fr; gap:2px; }
+  .lightbox-ba img{ width:100%; aspect-ratio:4/5; object-fit:cover; display:block; }
+  .lightbox-ba-label{ font-size:11px; font-weight:700; letter-spacing:.1em; text-transform:uppercase; color:var(--forest); text-align:center; padding-top:8px; }
+
+  .lightbox-section-label{ font-size:11px; letter-spacing:.12em; text-transform:uppercase; color:var(--forest); padding: 28px 36px 12px; }
+  .lightbox-progress{ display:flex; gap:10px; padding: 0 36px; overflow-x:auto; }
+  .lightbox-progress img{ width:150px; height:150px; object-fit:cover; border-radius:2px; flex-shrink:0; }
+
+  .lightbox-video{ padding: 0 36px; }
+  .lightbox-video iframe{ width:100%; aspect-ratio:9/16; max-width:340px; border:none; border-radius:2px; display:block; margin: 0 auto; }
+
+  .lightbox-footer{ padding: 32px 36px 36px; }
+
   @media (max-width:860px){
     nav{ display:none; }
     .header-phone{ display:none; }
     .brand-sub{ display:none; }
     .portfolio-grid{ grid-template-columns:1fr; }
+    .lightbox-ba{ grid-template-columns:1fr; }
     .footer-top{ flex-direction:column; }
     body{ padding-bottom: 64px; }
     .mobile-call-bar{
@@ -95,7 +132,7 @@
 </style>
 </head>
 <body>
- 
+
 <header>
   <div class="wrap header-inner">
     <a class="brand-link" href="index.html">
@@ -119,41 +156,35 @@
     </div>
   </div>
 </header>
- 
+
 <section class="page-hero">
   <div class="wrap">
     <div class="eyebrow">Completed work</div>
     <h1 class="page-title">A record of finished projects.</h1>
-    <p class="page-sub">Every project below was scoped clearly and completed with the same standard, start to finish.</p>
+    <p class="page-sub">Click any project to see the full story — before, after, and the work in between.</p>
   </div>
 </section>
- 
+
 <section class="wrap">
-  <div class="filter-row">
-    <span class="filter-tag active">All</span>
-    <span class="filter-tag">Bathroom</span>
-    <span class="filter-tag">Kitchen</span>
-    <span class="filter-tag">Tile</span>
-    <span class="filter-tag">Restoration</span>
+  <div class="filter-row" id="filterRow">
+    <button class="filter-tag active" data-filter="all">All</button>
+    <button class="filter-tag" data-filter="bathroom-kitchen">Bathroom &amp; Kitchen</button>
+    <button class="filter-tag" data-filter="restoration">Restoration &amp; Repair</button>
+    <button class="filter-tag" data-filter="tile">Tile &amp; Finish</button>
+    <button class="filter-tag" data-filter="exterior">Exterior &amp; Concrete</button>
+    <button class="filter-tag" data-filter="general">General Renovation</button>
   </div>
- 
-  <div class="portfolio-grid">
-    <div class="portfolio-item" style="background-image: linear-gradient(180deg, transparent 40%, rgba(0,0,0,0.5) 100%), url('portfolio-1.jpg');"><div class="portfolio-tag">Bathroom Remodel</div><div class="portfolio-title">West Shore</div></div>
-    <div class="portfolio-item" style="background-image: linear-gradient(180deg, transparent 40%, rgba(0,0,0,0.5) 100%), url('portfolio-2.jpg');"><div class="portfolio-tag">Full Renovation</div><div class="portfolio-title">Harrisburg Area</div></div>
-    <div class="portfolio-item" style="background-image: linear-gradient(180deg, transparent 40%, rgba(0,0,0,0.5) 100%), url('portfolio-3.jpg');"><div class="portfolio-tag">Tile &amp; Finish</div><div class="portfolio-title">Carlisle Area</div></div>
-    <div class="portfolio-item" style="background-image: linear-gradient(180deg, transparent 40%, rgba(0,0,0,0.5) 100%), url('portfolio-4.jpg');"><div class="portfolio-tag">Kitchen Remodel</div><div class="portfolio-title">West Shore</div></div>
-    <div class="portfolio-item" style="background-image: linear-gradient(180deg, transparent 40%, rgba(0,0,0,0.5) 100%), url('portfolio-5.jpg');"><div class="portfolio-tag">Restoration</div><div class="portfolio-title">Harrisburg Area</div></div>
-    <div class="portfolio-item" style="background-image: linear-gradient(180deg, transparent 40%, rgba(0,0,0,0.5) 100%), url('portfolio-6.jpg');"><div class="portfolio-tag">Bathroom Remodel</div><div class="portfolio-title">Carlisle Area</div></div>
-  </div>
+
+  <div class="portfolio-grid" id="portfolioGrid"></div>
 </section>
- 
+
 <section class="cta-strip">
   <div class="wrap cta-strip-inner">
     <h3>Like what you see?</h3>
     <a class="btn-cream" href="quote.html">Request a Quote</a>
   </div>
 </section>
- 
+
 <footer>
   <div class="wrap">
     <div class="footer-top">
@@ -200,18 +231,239 @@
     </div>
     <div class="footer-bottom">
       <span>© 2026 Fannelli Precision. All rights reserved.</span>
-      <span>Owner-Managed · Central Pennsylvania</span>
+      <span>Owner-Managed · Central Pennsylvania · PA HIC# PA215068</span>
     </div>
   </div>
 </footer>
- 
+
 <div class="mobile-call-bar">
   <a href="tel:+12233277915">
     <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
     Call Now — (223) 327-7915
   </a>
 </div>
- 
+
+<!-- Lightbox -->
+<div class="lightbox-overlay" id="lightbox">
+  <div class="lightbox-box">
+    <button class="lightbox-close" id="lightboxClose">✕</button>
+    <div class="lightbox-header">
+      <div class="lightbox-tag" id="lbTag"></div>
+      <div class="lightbox-title" id="lbTitle"></div>
+      <div class="lightbox-location" id="lbLocation"></div>
+    </div>
+    <div class="lightbox-ba" id="lbBeforeAfter"></div>
+    <div id="lbDuringSection" style="display:none;">
+      <div class="lightbox-section-label">During</div>
+      <div class="lightbox-progress" id="lbDuring"></div>
+    </div>
+    <div id="lbProgressSection" style="display:none;">
+      <div class="lightbox-section-label">Progress</div>
+      <div class="lightbox-progress" id="lbProgress"></div>
+    </div>
+    <div id="lbVideoSection" style="display:none;">
+      <div class="lightbox-section-label">Video</div>
+      <div class="lightbox-video" id="lbVideo"></div>
+    </div>
+    <div class="lightbox-footer">
+      <a class="btn" href="quote.html">Request a Similar Project</a>
+    </div>
+  </div>
+</div>
+
+<script>
+/* ============================================
+   PROJECT DATA
+   To add a new project: copy a block below, change the fields.
+   - categories: ARRAY of service types that applied (options: bathroom-kitchen, restoration, tile, exterior, general)
+   - pairs: ARRAY of before/after pairs. Most projects have 1 pair. Multi-service
+     projects (like a punch-list job) can have several pairs, each with its own label.
+   - during: array of image filenames showing the process/demo (optional, use when the
+     transformation isn't legible from before/after alone — rebuilds, rot removal, etc.)
+   - video: paste a video embed URL, or null if none
+   ============================================ */
+const projects = [
+  {
+    categories: ["bathroom-kitchen", "tile"],
+    tag: "Bathroom Remodel",
+    title: "Bathroom Remodel",
+    location: "Central PA",
+    pairs: [
+      { label: null, before: "bath1-before.jpg", after: "bath1-after.jpg" }
+    ],
+    during: [],
+    video: null
+  },
+  {
+    categories: ["bathroom-kitchen", "tile"],
+    tag: "Master & Guest Bathroom Remodel",
+    title: "Two-Bathroom Renovation — Tub, Tile &amp; Vanity",
+    location: "Central PA",
+    pairs: [
+      { label: "Master Bathroom", before: "bath2-master-before.jpg", after: "bath2-master-after.jpg" },
+      { label: "Guest Bathroom", before: "bath2-guest-before.jpg", after: "bath2-guest-after.jpg" }
+    ],
+    during: [],
+    video: null
+  },
+  {
+    categories: ["exterior"],
+    tag: "Exterior Refresh",
+    title: "Patio Revitalization",
+    location: "Central PA",
+    pairs: [
+      { label: "Wood Staining", before: "patio-stain-before.jpg", after: "patio-stain-after.jpg" },
+      { label: "Bathtub Reglazing", before: "patio-reglaze-before.jpg", after: "patio-reglaze-after.jpg" },
+      { label: "Railing Respray", before: "patio-railing-before.jpg", after: "patio-railing-after.jpg" },
+      { label: "Mailbox Replacement", before: "patio-mailbox-before.jpg", after: "patio-mailbox-after.jpg" }
+    ],
+    during: [],
+    video: null
+  },
+  {
+    categories: ["exterior"],
+    tag: "Fence Rebuild",
+    title: "Fence Rebuild &amp; Repaint",
+    location: "Central PA",
+    pairs: [
+      { label: null, before: "fence-before.jpg", after: "fence-after.jpg" }
+    ],
+    during: ["fence-during-1.jpg", "fence-during-2.jpg"],
+    video: null
+  },
+  {
+    categories: ["exterior"],
+    tag: "Concrete",
+    title: "Sidewalk Replacement",
+    location: "Central PA",
+    pairs: [
+      { label: null, before: "sidewalk-before.jpg", after: "sidewalk-after.jpg" }
+    ],
+    during: [],
+    video: null
+  },
+  {
+    categories: ["exterior"],
+    tag: "Concrete",
+    title: "Driveway Replacement",
+    location: "Central PA",
+    pairs: [
+      { label: null, before: "driveway-before.jpg", after: "driveway-after.jpg" }
+    ],
+    during: [],
+    video: null
+  },
+  {
+    categories: ["exterior", "restoration"],
+    tag: "Siding Repair",
+    title: "Siding Repair",
+    location: "Central PA",
+    pairs: [
+      { label: null, before: "siding-before.jpg", after: "siding-after.jpg" }
+    ],
+    during: ["siding-during-1.jpg"],
+    video: null
+  },
+  {
+    categories: ["restoration"],
+    tag: "Restoration",
+    title: "Door Seal — Wood Rot Tear-Out &amp; Replace",
+    location: "Central PA",
+    pairs: [
+      { label: null, before: "door-before.jpg", after: "door-after.jpg" }
+    ],
+    during: ["door-during-1.jpg"],
+    video: null
+  }
+];
+
+const grid = document.getElementById('portfolioGrid');
+const lightbox = document.getElementById('lightbox');
+
+function categoryLabel(cat) {
+  const labels = {
+    "bathroom-kitchen": "Bathroom & Kitchen",
+    "restoration": "Restoration & Repair",
+    "tile": "Tile & Finish",
+    "exterior": "Exterior & Concrete",
+    "general": "General Renovation"
+  };
+  return cat.map(c => labels[c]).join(' · ');
+}
+
+function renderGrid(filter) {
+  grid.innerHTML = '';
+  projects.forEach((p, i) => {
+    if (filter !== 'all' && !p.categories.includes(filter)) return;
+    const photoCount = p.pairs.length * 2 + p.during.length;
+    const btn = document.createElement('button');
+    btn.className = 'portfolio-item';
+    btn.style.backgroundImage = `linear-gradient(180deg, transparent 40%, rgba(0,0,0,0.55) 100%), url('${p.pairs[0].after}')`;
+    btn.innerHTML = `
+      <div class="portfolio-tag">${categoryLabel(p.categories)}</div>
+      <div class="portfolio-title">${p.tag}</div>
+      <div class="media-count">${photoCount} photos${p.video ? ' + video' : ''}</div>
+    `;
+    btn.addEventListener('click', () => openLightbox(i));
+    grid.appendChild(btn);
+  });
+}
+
+function openLightbox(i) {
+  const p = projects[i];
+  document.getElementById('lbTag').textContent = categoryLabel(p.categories);
+  document.getElementById('lbTitle').innerHTML = p.title;
+  document.getElementById('lbLocation').textContent = p.tag;
+
+  document.getElementById('lbBeforeAfter').innerHTML = p.pairs.map(pair => `
+    <div>
+      ${pair.label ? `<div class="ba-pair-label">${pair.label}</div>` : ''}
+      <div class="ba-pair-grid">
+        <div><img src="${pair.before}" alt="Before"><div class="lightbox-ba-label">Before</div></div>
+        <div><img src="${pair.after}" alt="After"><div class="lightbox-ba-label">After</div></div>
+      </div>
+    </div>
+  `).join('');
+
+  const duringSection = document.getElementById('lbDuringSection');
+  if (p.during.length > 0) {
+    duringSection.style.display = 'block';
+    document.getElementById('lbDuring').innerHTML = p.during.map(img => `<img src="${img}" alt="In progress">`).join('');
+  } else {
+    duringSection.style.display = 'none';
+  }
+
+  const videoSection = document.getElementById('lbVideoSection');
+  if (p.video) {
+    videoSection.style.display = 'block';
+    document.getElementById('lbVideo').innerHTML = `<iframe src="${p.video}" allowfullscreen></iframe>`;
+  } else {
+    videoSection.style.display = 'none';
+  }
+
+  lightbox.classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeLightbox() {
+  lightbox.classList.remove('open');
+  document.body.style.overflow = '';
+  document.getElementById('lbVideo').innerHTML = '';
+}
+
+document.getElementById('lightboxClose').addEventListener('click', closeLightbox);
+lightbox.addEventListener('click', (e) => { if (e.target === lightbox) closeLightbox(); });
+
+document.querySelectorAll('.filter-tag').forEach(tag => {
+  tag.addEventListener('click', () => {
+    document.querySelectorAll('.filter-tag').forEach(t => t.classList.remove('active'));
+    tag.classList.add('active');
+    renderGrid(tag.dataset.filter);
+  });
+});
+
+renderGrid('all');
+</script>
+
 </body>
 </html>
- 
