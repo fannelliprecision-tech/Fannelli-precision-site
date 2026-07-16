@@ -48,7 +48,7 @@
   .filter-tag.active{ background:var(--forest); color:var(--cream); border-color:var(--forest); }
 
   .portfolio-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:20px; padding-bottom:90px; }
-  .portfolio-item{ aspect-ratio:3/4; background-size:cover; background-position:center; background-color:var(--ink-green); position:relative; border-radius:2px; overflow:hidden; display:flex; flex-direction:column; justify-content:flex-end; padding:20px; cursor:pointer; border:none; text-align:left; transition: transform .2s; }
+  .portfolio-item{ aspect-ratio:4/3; background-size:cover; background-position:center; background-color:var(--ink-green); position:relative; border-radius:2px; overflow:hidden; display:flex; flex-direction:column; justify-content:flex-end; padding:20px; cursor:pointer; border:none; text-align:left; transition: transform .2s; }
   .portfolio-item:hover{ transform: translateY(-3px); }
   .portfolio-item::before{ content:''; position:absolute; inset:0; background:linear-gradient(180deg,transparent 40%,rgba(0,0,0,0.55) 100%); }
   .portfolio-tag{ position:relative; z-index:2; font-size:11px; letter-spacing:.1em; text-transform:uppercase; color:var(--cream); opacity:.85; margin-bottom:5px; }
@@ -101,7 +101,7 @@
   .lightbox-ba{ padding: 0 36px; display:flex; flex-direction:column; gap: 24px; }
   .ba-pair-label{ font-size:12px; font-weight:600; color:var(--ink-green); margin-bottom:8px; }
   .ba-pair-grid{ display:grid; grid-template-columns:1fr 1fr; gap:2px; }
-  .lightbox-ba img{ width:100%; aspect-ratio:4/5; object-fit:cover; display:block; }
+  .lightbox-ba img{ width:100%; aspect-ratio:4/3; object-fit:cover; display:block; }
   .lightbox-ba-label{ font-size:11px; font-weight:700; letter-spacing:.1em; text-transform:uppercase; color:var(--forest); text-align:center; padding-top:8px; }
 
   .lightbox-section-label{ font-size:11px; letter-spacing:.12em; text-transform:uppercase; color:var(--forest); padding: 28px 36px 12px; }
@@ -118,7 +118,7 @@
     .header-phone{ display:none; }
     .brand-sub{ display:none; }
     .portfolio-grid{ grid-template-columns:1fr; }
-    .lightbox-ba{ grid-template-columns:1fr; }
+    .ba-pair-grid{ grid-template-columns: repeat(2, 1fr) !important; }
     .footer-top{ flex-direction:column; }
     body{ padding-bottom: 64px; }
     .mobile-call-bar{
@@ -417,8 +417,8 @@ const projects = [
     tags: ["Painting"],
     title: "Interior Room Painting",
     partOf: null,
-    before: ["room-paint-before.jpg"],
-    after: ["room-paint-after.jpg"],
+    before: ["room-paint-before-1.jpg", "room-paint-before-2.jpg"],
+    after: ["room-paint-after-1.jpg", "room-paint-after-2.jpg"],
     during: [],
     video: null
   }
