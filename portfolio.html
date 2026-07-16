@@ -160,19 +160,28 @@
 <section class="page-hero">
   <div class="wrap">
     <div class="eyebrow">Completed work</div>
-    <h1 class="page-title">A record of finished projects.</h1>
-    <p class="page-sub">Click any project to see the full story — before, after, and the work in between.</p>
+    <h1 class="page-title">Find the work you're looking for.</h1>
+    <p class="page-sub">Search by service below — every photo is tagged by exactly what was done, so you can see real examples of your specific project.</p>
   </div>
 </section>
 
 <section class="wrap">
   <div class="filter-row" id="filterRow">
     <button class="filter-tag active" data-filter="all">All</button>
-    <button class="filter-tag" data-filter="bathroom-kitchen">Bathroom &amp; Kitchen</button>
-    <button class="filter-tag" data-filter="restoration">Restoration &amp; Repair</button>
-    <button class="filter-tag" data-filter="tile">Tile &amp; Finish</button>
-    <button class="filter-tag" data-filter="exterior">Exterior &amp; Concrete</button>
-    <button class="filter-tag" data-filter="general">General Renovation</button>
+    <button class="filter-tag" data-filter="Bathroom Remodel">Bathroom Remodel</button>
+    <button class="filter-tag" data-filter="Tub Replacement">Tub Replacement</button>
+    <button class="filter-tag" data-filter="Tub Reglazing">Tub Reglazing</button>
+    <button class="filter-tag" data-filter="Tiling">Tiling</button>
+    <button class="filter-tag" data-filter="Vanity Replacement">Vanity Replacement</button>
+    <button class="filter-tag" data-filter="Fence Rebuild">Fence Rebuild</button>
+    <button class="filter-tag" data-filter="Concrete">Concrete</button>
+    <button class="filter-tag" data-filter="Siding Repair">Siding Repair</button>
+    <button class="filter-tag" data-filter="Door & Rot Repair">Door &amp; Rot Repair</button>
+    <button class="filter-tag" data-filter="Mailbox Replacement">Mailbox Replacement</button>
+    <button class="filter-tag" data-filter="Railing Repair">Railing Repair</button>
+    <button class="filter-tag" data-filter="Wood Staining">Wood Staining</button>
+    <button class="filter-tag" data-filter="Painting">Painting</button>
+    <button class="filter-tag" data-filter="Exterior Repair">Exterior Repair</button>
   </div>
 
   <div class="portfolio-grid" id="portfolioGrid"></div>
@@ -273,106 +282,125 @@
 
 <script>
 /* ============================================
-   PROJECT DATA
-   To add a new project: copy a block below, change the fields.
-   - categories: ARRAY of service types that applied (options: bathroom-kitchen, restoration, tile, exterior, general)
-   - pairs: ARRAY of before/after pairs. Most projects have 1 pair. Multi-service
-     projects (like a punch-list job) can have several pairs, each with its own label.
-   - during: array of image filenames showing the process/demo (optional, use when the
-     transformation isn't legible from before/after alone — rebuilds, rot removal, etc.)
-   - video: paste a video embed URL, or null if none
+   PORTFOLIO ENTRIES
+   Each entry is ONE transformation (one before/after pair), tagged with
+   every specific service it represents. Same photo can carry multiple tags
+   so it shows up under every relevant search.
+
+   To add a new entry: copy a block, fill in the fields.
+   - tags: array of exact strings matching the filter buttons above
+   - during: array of image filenames showing the process (optional)
+   - video: embed URL, or null
+   - partOf: optional note if this was one piece of a larger client project
    ============================================ */
 const projects = [
   {
-    categories: ["bathroom-kitchen", "tile"],
-    tag: "Bathroom Remodel",
+    tags: ["Bathroom Remodel", "Tiling"],
     title: "Bathroom Remodel",
-    location: "Central PA",
-    pairs: [
-      { label: null, before: "bath1-before.jpg", after: "bath1-after.jpg" }
-    ],
+    partOf: null,
+    before: ["bath1-before.jpg"],
+    after: ["bath1-after.jpg"],
     during: [],
     video: null
   },
   {
-    categories: ["bathroom-kitchen", "tile"],
-    tag: "Master & Guest Bathroom Remodel",
-    title: "Two-Bathroom Renovation — Tub, Tile &amp; Vanity",
-    location: "Central PA",
-    pairs: [
-      { label: "Master Bathroom", before: "bath2-master-before.jpg", after: "bath2-master-after.jpg" },
-      { label: "Guest Bathroom", before: "bath2-guest-before.jpg", after: "bath2-guest-after.jpg" }
-    ],
+    tags: ["Bathroom Remodel", "Tub Replacement", "Tiling", "Vanity Replacement"],
+    title: "Master Bathroom — Tub, Tile &amp; Vanity",
+    partOf: "Two-Bathroom Renovation",
+    before: ["bath2-master-before.jpg"],
+    after: ["bath2-master-after.jpg"],
     during: [],
     video: null
   },
   {
-    categories: ["exterior"],
-    tag: "Exterior Refresh",
-    title: "Patio Revitalization",
-    location: "Central PA",
-    pairs: [
-      { label: "Wood Staining", before: "patio-stain-before.jpg", after: "patio-stain-after.jpg" },
-      { label: "Bathtub Reglazing", before: "patio-reglaze-before.jpg", after: "patio-reglaze-after.jpg" },
-      { label: "Railing Respray", before: "patio-railing-before.jpg", after: "patio-railing-after.jpg" },
-      { label: "Mailbox Replacement", before: "patio-mailbox-before.jpg", after: "patio-mailbox-after.jpg" }
-    ],
+    tags: ["Bathroom Remodel", "Tub Replacement", "Tiling", "Vanity Replacement"],
+    title: "Guest Bathroom — Tub, Tile &amp; Vanity",
+    partOf: "Two-Bathroom Renovation",
+    before: ["bath2-guest-before.jpg"],
+    after: ["bath2-guest-after.jpg"],
     during: [],
     video: null
   },
   {
-    categories: ["exterior"],
-    tag: "Fence Rebuild",
+    tags: ["Wood Staining", "Exterior Repair"],
+    title: "Wood Staining",
+    partOf: "Patio Revitalization",
+    before: ["patio-stain-before.jpg"],
+    after: ["patio-stain-after.jpg"],
+    during: [],
+    video: null
+  },
+  {
+    tags: ["Tub Reglazing", "Bathroom Remodel"],
+    title: "Bathtub Reglazing",
+    partOf: "Patio Revitalization",
+    before: ["patio-reglaze-before.jpg"],
+    after: ["patio-reglaze-after.jpg"],
+    during: [],
+    video: null
+  },
+  {
+    tags: ["Railing Repair", "Painting", "Exterior Repair"],
+    title: "Railing Respray",
+    partOf: "Patio Revitalization",
+    before: ["patio-railing-before.jpg"],
+    after: ["patio-railing-after.jpg"],
+    during: [],
+    video: null
+  },
+  {
+    tags: ["Mailbox Replacement", "Exterior Repair"],
+    title: "Mailbox Replacement",
+    partOf: "Patio Revitalization",
+    before: ["patio-mailbox-before.jpg"],
+    after: ["patio-mailbox-after.jpg"],
+    during: [],
+    video: null
+  },
+  {
+    tags: ["Fence Rebuild", "Painting", "Exterior Repair"],
     title: "Fence Rebuild &amp; Repaint",
-    location: "Central PA",
-    pairs: [
-      { label: null, before: "fence-before.jpg", after: "fence-after.jpg" }
-    ],
+    partOf: null,
+    before: ["fence-before.jpg"],
+    after: ["fence-after.jpg"],
     during: ["fence-during-1.jpg", "fence-during-2.jpg"],
     video: null
   },
   {
-    categories: ["exterior"],
-    tag: "Concrete",
+    tags: ["Concrete"],
     title: "Sidewalk Replacement",
-    location: "Central PA",
-    pairs: [
-      { label: null, before: "sidewalk-before.jpg", after: "sidewalk-after.jpg" }
-    ],
+    partOf: null,
+    before: ["sidewalk-before.jpg"],
+    after: ["sidewalk-after.jpg"],
     during: [],
     video: null
   },
   {
-    categories: ["exterior"],
-    tag: "Concrete",
-    title: "Driveway Replacement",
-    location: "Central PA",
-    pairs: [
-      { label: null, before: "driveway-before.jpg", after: "driveway-after.jpg" }
-    ],
+    tags: ["Concrete"],
+    title: "Driveway / Walkway Extension",
+    partOf: null,
+    before: ["driveway-before.jpg"],
+    after: ["driveway-after.jpg"],
     during: [],
     video: null
   },
   {
-    categories: ["exterior", "restoration"],
-    tag: "Siding Repair",
+    tags: ["Siding Repair", "Exterior Repair"],
     title: "Siding Repair",
-    location: "Central PA",
-    pairs: [
-      { label: null, before: "siding-before.jpg", after: "siding-after.jpg" }
-    ],
+    partOf: null,
+    before: ["siding-before.jpg"],
+    after: ["siding-after.jpg"],
     during: ["siding-during-1.jpg"],
     video: null
   },
   {
-    categories: ["restoration"],
-    tag: "Restoration",
-    title: "Door Seal — Wood Rot Tear-Out &amp; Replace",
-    location: "Central PA",
-    pairs: [
-      { label: null, before: "door-before.jpg", after: "door-after.jpg" }
-    ],
-    during: ["door-during-1.jpg"],
+    tags: ["Door & Rot Repair"],
+    title: "Door Sill — Wood Rot Tear-Out &amp; Replace",
+    partOf: null,
+    before: ["door-before.jpg"],
+    after: ["door-after-outside.jpg", "door-after-inside.jpg"],
+    afterLabels: ["Outside", "Inside"],
+    during: [],
     video: null
   }
 ];
@@ -380,28 +408,17 @@ const projects = [
 const grid = document.getElementById('portfolioGrid');
 const lightbox = document.getElementById('lightbox');
 
-function categoryLabel(cat) {
-  const labels = {
-    "bathroom-kitchen": "Bathroom & Kitchen",
-    "restoration": "Restoration & Repair",
-    "tile": "Tile & Finish",
-    "exterior": "Exterior & Concrete",
-    "general": "General Renovation"
-  };
-  return cat.map(c => labels[c]).join(' · ');
-}
-
 function renderGrid(filter) {
   grid.innerHTML = '';
   projects.forEach((p, i) => {
-    if (filter !== 'all' && !p.categories.includes(filter)) return;
-    const photoCount = p.pairs.length * 2 + p.during.length;
+    if (filter !== 'all' && !p.tags.includes(filter)) return;
+    const photoCount = p.before.length + p.after.length + p.during.length;
     const btn = document.createElement('button');
     btn.className = 'portfolio-item';
-    btn.style.backgroundImage = `linear-gradient(180deg, transparent 40%, rgba(0,0,0,0.55) 100%), url('${p.pairs[0].after}')`;
+    btn.style.backgroundImage = `linear-gradient(180deg, transparent 40%, rgba(0,0,0,0.55) 100%), url('${p.after[0]}')`;
     btn.innerHTML = `
-      <div class="portfolio-tag">${categoryLabel(p.categories)}</div>
-      <div class="portfolio-title">${p.tag}</div>
+      <div class="portfolio-tag">${p.tags[0]}</div>
+      <div class="portfolio-title">${p.title}</div>
       <div class="media-count">${photoCount} photos${p.video ? ' + video' : ''}</div>
     `;
     btn.addEventListener('click', () => openLightbox(i));
@@ -411,19 +428,23 @@ function renderGrid(filter) {
 
 function openLightbox(i) {
   const p = projects[i];
-  document.getElementById('lbTag').textContent = categoryLabel(p.categories);
+  document.getElementById('lbTag').textContent = p.tags.join(' · ');
   document.getElementById('lbTitle').innerHTML = p.title;
-  document.getElementById('lbLocation').textContent = p.tag;
+  document.getElementById('lbLocation').textContent = p.partOf ? `Part of: ${p.partOf}` : '';
 
-  document.getElementById('lbBeforeAfter').innerHTML = p.pairs.map(pair => `
-    <div>
-      ${pair.label ? `<div class="ba-pair-label">${pair.label}</div>` : ''}
-      <div class="ba-pair-grid">
-        <div><img src="${pair.before}" alt="Before"><div class="lightbox-ba-label">Before</div></div>
-        <div><img src="${pair.after}" alt="After"><div class="lightbox-ba-label">After</div></div>
-      </div>
+  const beforeLabel = p.before.length > 1 ? (n) => `Before ${n+1}` : () => 'Before';
+  const afterLabel = p.afterLabels
+    ? (n) => `After — ${p.afterLabels[n]}`
+    : (p.after.length > 1 ? (n) => `After ${n+1}` : () => 'After');
+
+  const beforeHtml = p.before.map((img, n) => `<div><img src="${img}" alt="Before"><div class="lightbox-ba-label">${beforeLabel(n)}</div></div>`).join('');
+  const afterHtml = p.after.map((img, n) => `<div><img src="${img}" alt="After"><div class="lightbox-ba-label">${afterLabel(n)}</div></div>`).join('');
+
+  document.getElementById('lbBeforeAfter').innerHTML = `
+    <div class="ba-pair-grid" style="grid-template-columns: repeat(${p.before.length}, 1fr) repeat(${p.after.length}, 1fr);">
+      ${beforeHtml}${afterHtml}
     </div>
-  `).join('');
+  `;
 
   const duringSection = document.getElementById('lbDuringSection');
   if (p.during.length > 0) {
