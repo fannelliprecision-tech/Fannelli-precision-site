@@ -106,7 +106,7 @@
   .proof-section{ background: var(--cream-dim); }
   .proof-grid{ display:grid; grid-template-columns: 1.3fr 1fr; gap: 48px; align-items: center; }
   .before-after{ display:grid; grid-template-columns: 1fr 1fr; gap: 2px; border-radius: 2px; overflow:hidden; }
-  .ba-panel{ aspect-ratio: 4/5; background-size:cover; background-position:center; background-color: var(--ink-green); position:relative; display:flex; align-items:flex-end; padding: 16px; }
+  .ba-panel{ aspect-ratio: 4/3; background-size: contain; background-repeat: no-repeat; background-position: center; background-color: var(--ink-green); position:relative; display:flex; align-items:flex-end; padding: 16px; }
   .ba-panel::before{ content:''; position:absolute; inset:0; background:linear-gradient(180deg,transparent 50%,rgba(0,0,0,0.5) 100%); }
   .ba-label{ position:relative; z-index:2; font-size:11px; font-weight:700; letter-spacing:.1em; text-transform:uppercase; color:var(--cream); }
   .testimonial-quote{ font-family:'Fraunces',serif; font-style:italic; font-size:22px; line-height:1.4; color:var(--ink); margin-bottom:20px; }
@@ -129,7 +129,7 @@
 
   /* Portfolio preview */
   .portfolio-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:18px; }
-  .portfolio-item{ aspect-ratio:3/4; background-size:cover; background-position:center; background-color:var(--ink-green); position:relative; border-radius:2px; overflow:hidden; display:flex; flex-direction:column; justify-content:flex-end; padding:20px; }
+  .portfolio-item{ aspect-ratio:4/3; background-size: 100% 100%, contain; background-repeat: no-repeat, no-repeat; background-position: center, center; background-color:var(--ink-green); position:relative; border-radius:2px; overflow:hidden; display:flex; flex-direction:column; justify-content:flex-end; padding:20px; }
   .portfolio-item::before{ content:''; position:absolute; inset:0; background:linear-gradient(180deg,transparent 40%,rgba(0,0,0,0.5) 100%); }
   .portfolio-tag{ position:relative; z-index:2; font-size:11px; letter-spacing:.1em; text-transform:uppercase; color:var(--cream); opacity:.85; margin-bottom:5px; }
   .portfolio-title{ position:relative; z-index:2; font-family:'Fraunces',serif; font-size:19px; color:var(--cream); }
@@ -301,13 +301,13 @@
     <div class="section-head">
       <div>
         <div class="section-label">Proof, not promises</div>
-        <h2 class="section-title">See the difference.</h2>
+        <h2 class="section-title"><a href="portfolio.html" style="text-decoration:underline;">See the difference. →</a></h2>
       </div>
     </div>
-    <div class="before-after" style="max-width: 720px;">
+    <a href="portfolio.html" class="before-after" style="max-width: 720px; margin: 0 auto; display:grid;">
       <div class="ba-panel" style="background-image:url('before-1.jpg');"><span class="ba-label">Before</span></div>
       <div class="ba-panel" style="background-image:url('after-1.jpg');"><span class="ba-label">After</span></div>
-    </div>
+    </a>
   </div>
 </section>
 
@@ -382,9 +382,9 @@
       <p class="section-meta">Every project scoped, quoted, and completed on schedule. Full portfolio available on request.</p>
     </div>
     <div class="portfolio-grid">
-      <div class="portfolio-item" style="background-image: linear-gradient(180deg, transparent 40%, rgba(0,0,0,0.5) 100%), url('portfolio-1.jpg');"><div class="portfolio-tag">Bathroom Remodel</div><div class="portfolio-title">West Shore</div></div>
-      <div class="portfolio-item" style="background-image: linear-gradient(180deg, transparent 40%, rgba(0,0,0,0.5) 100%), url('portfolio-2.jpg');"><div class="portfolio-tag">Full Renovation</div><div class="portfolio-title">Harrisburg Area</div></div>
-      <div class="portfolio-item" style="background-image: linear-gradient(180deg, transparent 40%, rgba(0,0,0,0.5) 100%), url('portfolio-3.jpg');"><div class="portfolio-tag">Tile &amp; Finish</div><div class="portfolio-title">Carlisle Area</div></div>
+      <a href="portfolio.html" class="portfolio-item" style="background-image: linear-gradient(180deg, transparent 40%, rgba(0,0,0,0.5) 100%), url('bath2-master-after-1.jpg');"><div class="portfolio-tag">Bathroom Remodel</div><div class="portfolio-title">Master Bathroom</div></a>
+      <a href="portfolio.html" class="portfolio-item" style="background-image: linear-gradient(180deg, transparent 40%, rgba(0,0,0,0.5) 100%), url('driveway-after-1.jpg');"><div class="portfolio-tag">Concrete</div><div class="portfolio-title">Driveway / Walkway Extension</div></a>
+      <a href="portfolio.html" class="portfolio-item" style="background-image: linear-gradient(180deg, transparent 40%, rgba(0,0,0,0.5) 100%), url('garage-door-after.jpg');"><div class="portfolio-tag">Painting</div><div class="portfolio-title">Garage Door Repaint</div></a>
     </div>
   </div>
 </section>
