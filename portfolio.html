@@ -83,7 +83,7 @@
 
   /* Lightbox */
   .lightbox-overlay{
-    display:none; position:fixed; inset:0; z-index:200; background:rgba(10,13,6,0.92);
+    display:none; position:fixed; inset:0; z-index:200; background:rgba(10,13,6,0.98);
     padding: 40px 20px; overflow-y:auto;
   }
   .lightbox-overlay.open{ display:block; }
@@ -100,7 +100,7 @@
 
   .lightbox-ba{ padding: 0 36px; display:flex; flex-direction:column; gap: 24px; }
   .ba-pair-label{ font-size:12px; font-weight:600; color:var(--ink-green); margin-bottom:8px; }
-  .ba-pair-grid{ display:grid; grid-template-columns:1fr 1fr; gap:2px; }
+  .ba-pair-grid{ display:grid; grid-template-columns:1fr 1fr; gap:12px; }
   .lightbox-ba img{ width:100%; aspect-ratio:4/3; object-fit:contain; background-color:var(--ink-green); display:block; }
   .lightbox-ba-label{ font-size:11px; font-weight:700; letter-spacing:.1em; text-transform:uppercase; color:var(--forest); text-align:center; padding-top:8px; }
 
@@ -460,7 +460,7 @@ function openLightbox(i) {
   const afterHtml = p.after.map((img, n) => `<div><img src="${img}" alt="After"><div class="lightbox-ba-label">${afterLabel(n)}</div></div>`).join('');
 
   document.getElementById('lbBeforeAfter').innerHTML = `
-    <div class="ba-pair-grid" style="grid-template-columns: repeat(${p.before.length}, 1fr) repeat(${p.after.length}, 1fr);">
+    <div class="ba-pair-grid">
       ${beforeHtml}${afterHtml}
     </div>
   `;
