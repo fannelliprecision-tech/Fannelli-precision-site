@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Portfolio — Fannelli Precision</title>
+<title>Portfolio | Fannelli Precision</title>
 <meta name="description" content="Completed renovation and restoration projects across Central Pennsylvania.">
 <link rel="icon" type="image/png" href="favicon-32.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -161,7 +161,7 @@
   <div class="wrap">
     <div class="eyebrow">Completed work</div>
     <h1 class="page-title">Find the work you're looking for.</h1>
-    <p class="page-sub">Search by service below — every photo is tagged by exactly what was done, so you can see real examples of your specific project.</p>
+    <p class="page-sub">Search by service below. Every photo is tagged by exactly what was done, so you can see real examples of your specific project.</p>
   </div>
 </section>
 
@@ -249,7 +249,7 @@
 <div class="mobile-call-bar">
   <a href="tel:+12233277915">
     <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-    Call Now — (223) 327-7915
+    Call Now: (223) 327-7915
   </a>
 </div>
 
@@ -297,7 +297,7 @@
 const projects = [
   {
     tags: ["Bathroom Remodel", "Tub Replacement", "Tiling", "Vanity Replacement"],
-    title: "Master Bathroom — Tub, Tile &amp; Vanity",
+    title: "Master Bathroom: Tub, Tile &amp; Vanity",
     partOf: "Two-Bathroom Renovation",
     before: ["bath2-master-before-1.jpg", "bath2-master-before-2.jpg"],
     after: ["bath2-master-after-1.jpg", "bath2-master-after-2.jpg"],
@@ -306,7 +306,7 @@ const projects = [
   },
   {
     tags: ["Bathroom Remodel", "Tub Replacement", "Tiling", "Vanity Replacement"],
-    title: "Guest Bathroom — Tub, Tile &amp; Vanity",
+    title: "Guest Bathroom: Tub, Tile &amp; Vanity",
     partOf: "Two-Bathroom Renovation",
     before: ["bath2-guest-before-1.jpg", "bath2-guest-before-2.jpg"],
     after: ["bath2-guest-after-1.jpg", "bath2-guest-after-2.jpg"],
@@ -387,7 +387,7 @@ const projects = [
   },
   {
     tags: ["Door & Rot Repair"],
-    title: "Door Sill — Wood Rot Tear-Out &amp; Replace",
+    title: "Door Sill: Wood Rot Tear-Out &amp; Replace",
     partOf: null,
     before: ["door-before.jpg"],
     after: ["door-after-outside.jpg", "door-after-inside.jpg"],
@@ -453,7 +453,7 @@ function openLightbox(i) {
 
   const beforeLabel = p.before.length > 1 ? (n) => `Before ${n+1}` : () => 'Before';
   const afterLabel = p.afterLabels
-    ? (n) => `After — ${p.afterLabels[n]}`
+    ? (n) => `After: ${p.afterLabels[n]}`
     : (p.after.length > 1 ? (n) => `After ${n+1}` : () => 'After');
 
   const beforeHtml = p.before.map((img, n) => `<div><img src="${img}" alt="Before"><div class="lightbox-ba-label">${beforeLabel(n)}</div></div>`).join('');
