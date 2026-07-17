@@ -21,8 +21,7 @@
 
   header{ position:sticky; top:0; z-index:50; background:rgba(254,246,228,0.95); backdrop-filter:blur(6px); border-bottom:1px solid rgba(10,13,6,0.08); }
   .header-inner{ display:flex; align-items:center; justify-content:space-between; padding:14px 0; }
-  .brand-link{ display:flex; flex-direction:column; align-items:flex-start; gap:4px; }
-  .wordmark-img{ height: 26px; width:auto; display:block; }
+  .brand-link{ display:flex; align-items:center; gap:12px; }
   .logo-mark{ width:36px; height:36px; flex-shrink:0; object-fit: contain; }
   .brand-text{ display:flex; flex-direction:column; line-height:1.25; }
   .brand-name{ font-family:'Fraunces',serif; font-weight:500; font-size:17px; letter-spacing:.01em; }
@@ -173,8 +172,9 @@
 <header>
   <div class="wrap header-inner">
     <a class="brand-link" href="index.html">
+      <img class="logo-mark" src="logo.png" alt="Fannelli Precision logo" onerror="this.src='favicon-32.png'">
       <div class="brand-text">
-        <img class="wordmark-img" src="wordmark.png" alt="Fannelli Precision">
+        <span class="brand-name">Fannelli Precision</span>
         <span class="brand-sub">Commercial &amp; Residential General Contracting</span>
       </div>
     </a>
@@ -346,7 +346,7 @@
    ============================================ */
 const projects = [
   {
-    tags: ["Bathroom Remodel", "Tub Replacement", "Tiling", "Vanity Replacement"],
+    tags: ["Bathroom Remodel", "Bathroom", "Tub Replacement", "Tiling", "Vanity Replacement"],
     title: "Master Bathroom: Tub, Tile &amp; Vanity",
     partOf: "Two-Bathroom Renovation",
     before: ["bath2-master-before-1.jpg", "bath2-master-before-2.jpg"],
@@ -355,7 +355,7 @@ const projects = [
     video: null
   },
   {
-    tags: ["Bathroom Remodel", "Tub Replacement", "Tiling", "Vanity Replacement"],
+    tags: ["Bathroom Remodel", "Bathroom", "Tub Replacement", "Tiling", "Vanity Replacement"],
     title: "Guest Bathroom: Tub, Tile &amp; Vanity",
     partOf: "Two-Bathroom Renovation",
     before: ["bath2-guest-before-1.jpg", "bath2-guest-before-2.jpg"],
@@ -365,15 +365,15 @@ const projects = [
   },
   {
     tags: ["Wood Staining", "Exterior Repair"],
-    title: "Wood Staining",
+    title: "Patio Revitalization / Wood Staining",
     partOf: "Patio Revitalization",
-    before: ["patio-stain-before.jpg"],
-    after: ["patio-stain-after.jpg"],
+    before: ["patio-stain-before-1.jpg", "patio-stain-before-2.jpg", "patio-stain-before-3.jpg"],
+    after: ["patio-stain-after-1.jpg", "patio-stain-after-2.jpg", "patio-stain-after-3.jpg"],
     during: [],
     video: null
   },
   {
-    tags: ["Tub Reglazing", "Bathroom Remodel"],
+    tags: ["Tub Reglazing", "Bathroom"],
     title: "Bathtub Reglazing",
     partOf: "Patio Revitalization",
     before: ["patio-reglaze-before.jpg"],
