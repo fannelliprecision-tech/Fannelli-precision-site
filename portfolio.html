@@ -81,6 +81,42 @@
 
   .mobile-call-bar{ display:none; }
 
+  /* Full-screen photo viewer (slideshow) */
+  .photo-viewer{
+    display:none; position:fixed; inset:0; z-index:300; background:rgba(0,0,0,0.97);
+    align-items:center; justify-content:center;
+  }
+  .photo-viewer.open{ display:flex; }
+  .viewer-content{ max-width:92vw; max-height:88vh; display:flex; flex-direction:column; align-items:center; }
+  .viewer-content img{ max-width:92vw; max-height:78vh; object-fit:contain; display:block; }
+  .viewer-caption{ color:var(--cream); font-size:13px; letter-spacing:.05em; text-transform:uppercase; margin-top:16px; opacity:.85; }
+  .viewer-counter{ color:var(--cream); font-size:12px; opacity:.55; margin-top:6px; }
+  .viewer-close{
+    position:fixed; top:20px; right:24px; width:40px; height:40px; border-radius:50%;
+    background:rgba(254,246,228,0.1); color:var(--cream); border:1px solid rgba(254,246,228,0.25);
+    font-size:18px; cursor:pointer; z-index:2; display:flex; align-items:center; justify-content:center;
+  }
+  .viewer-close:hover{ background:rgba(254,246,228,0.2); }
+  .viewer-nav{
+    position:fixed; top:50%; transform:translateY(-50%); width:52px; height:52px; border-radius:50%;
+    background:rgba(254,246,228,0.1); color:var(--cream); border:1px solid rgba(254,246,228,0.25);
+    font-size:26px; cursor:pointer; z-index:2; display:flex; align-items:center; justify-content:center;
+  }
+  .viewer-nav:hover{ background:rgba(254,246,228,0.2); }
+  .viewer-prev{ left:24px; }
+  .viewer-next{ right:24px; }
+
+  /* Make lightbox photos clickable */
+  .lightbox-ba img, .lightbox-progress img{ cursor:zoom-in; transition:opacity .15s; }
+  .lightbox-ba img:hover, .lightbox-progress img:hover{ opacity:.85; }
+
+  @media (max-width:640px){
+    .viewer-nav{ width:42px; height:42px; font-size:20px; }
+    .viewer-prev{ left:10px; }
+    .viewer-next{ right:10px; }
+    .viewer-close{ top:12px; right:12px; }
+  }
+
   /* Lightbox */
   .lightbox-overlay{
     display:none; position:fixed; inset:0; z-index:200; background:rgba(10,13,6,0.98);
@@ -281,6 +317,18 @@
   </div>
 </div>
 
+<!-- Full-screen photo viewer (slideshow) -->
+<div class="photo-viewer" id="photoViewer">
+  <button class="viewer-close" id="viewerClose">✕</button>
+  <button class="viewer-nav viewer-prev" id="viewerPrev">‹</button>
+  <button class="viewer-nav viewer-next" id="viewerNext">›</button>
+  <div class="viewer-content">
+    <img id="viewerImg" src="" alt="">
+    <div class="viewer-caption" id="viewerCaption"></div>
+    <div class="viewer-counter" id="viewerCounter"></div>
+  </div>
+</div>
+
 <script>
 /* ============================================
    PORTFOLIO ENTRIES
@@ -364,16 +412,16 @@ const projects = [
     partOf: null,
     before: ["sidewalk-before.jpg"],
     after: ["sidewalk-after.jpg"],
-    during: [],
+    during: ["sidewalk-during-1.jpg"],
     video: null
   },
   {
     tags: ["Concrete"],
     title: "Driveway / Walkway Extension",
     partOf: null,
-    before: ["driveway-before.jpg"],
-    after: ["driveway-after.jpg"],
-    during: [],
+    before: ["driveway-before-1.jpg", "driveway-before-2.jpg"],
+    after: ["driveway-after-1.jpg", "driveway-after-2.jpg"],
+    during: ["driveway-during-1.jpg", "driveway-during-2.jpg"],
     video: null
   },
   {
@@ -392,7 +440,7 @@ const projects = [
     before: ["door-before.jpg"],
     after: ["door-after-outside.jpg", "door-after-inside.jpg"],
     afterLabels: ["Outside", "Inside"],
-    during: [],
+    during: ["door-during-1.jpg"],
     video: null
   },
   {
@@ -445,6 +493,9 @@ function renderGrid(filter) {
   });
 }
 
+let currentPhotoList = [];
+let currentPhotoIndex = 0;
+
 function openLightbox(i) {
   const p = projects[i];
   document.getElementById('lbTag').textContent = p.tags.join(' · ');
@@ -456,8 +507,17 @@ function openLightbox(i) {
     ? (n) => `After: ${p.afterLabels[n]}`
     : (p.after.length > 1 ? (n) => `After ${n+1}` : () => 'After');
 
-  const beforeHtml = p.before.map((img, n) => `<div><img src="${img}" alt="Before"><div class="lightbox-ba-label">${beforeLabel(n)}</div></div>`).join('');
-  const afterHtml = p.after.map((img, n) => `<div><img src="${img}" alt="After"><div class="lightbox-ba-label">${afterLabel(n)}</div></div>`).join('');
+  // Build the flat, ordered photo list for this project (before -> during -> after)
+  // used by the full-screen viewer for next/prev navigation.
+  currentPhotoList = [
+    ...p.before.map((img, n) => ({ src: img, label: beforeLabel(n) })),
+    ...p.during.map((img, n) => ({ src: img, label: p.during.length > 1 ? `During ${n+1}` : 'During' })),
+    ...p.after.map((img, n) => ({ src: img, label: afterLabel(n) })),
+  ];
+
+  const beforeHtml = p.before.map((img, n) => `<div><img src="${img}" alt="Before" data-viewer-index="${n}"><div class="lightbox-ba-label">${beforeLabel(n)}</div></div>`).join('');
+  const afterOffset = p.before.length + p.during.length;
+  const afterHtml = p.after.map((img, n) => `<div><img src="${img}" alt="After" data-viewer-index="${afterOffset + n}"><div class="lightbox-ba-label">${afterLabel(n)}</div></div>`).join('');
 
   document.getElementById('lbBeforeAfter').innerHTML = `
     <div class="ba-pair-grid">
@@ -468,7 +528,10 @@ function openLightbox(i) {
   const duringSection = document.getElementById('lbDuringSection');
   if (p.during.length > 0) {
     duringSection.style.display = 'block';
-    document.getElementById('lbDuring').innerHTML = p.during.map(img => `<img src="${img}" alt="In progress">`).join('');
+    const duringOffset = p.before.length;
+    document.getElementById('lbDuring').innerHTML = p.during.map((img, n) =>
+      `<img src="${img}" alt="In progress" data-viewer-index="${duringOffset + n}">`
+    ).join('');
   } else {
     duringSection.style.display = 'none';
   }
@@ -480,6 +543,11 @@ function openLightbox(i) {
   } else {
     videoSection.style.display = 'none';
   }
+
+  // Wire up click-to-enlarge on every photo in this project
+  document.querySelectorAll('#lbBeforeAfter img, #lbDuring img').forEach(img => {
+    img.addEventListener('click', () => openViewer(parseInt(img.dataset.viewerIndex, 10)));
+  });
 
   lightbox.classList.add('open');
   document.body.style.overflow = 'hidden';
@@ -493,6 +561,48 @@ function closeLightbox() {
 
 document.getElementById('lightboxClose').addEventListener('click', closeLightbox);
 lightbox.addEventListener('click', (e) => { if (e.target === lightbox) closeLightbox(); });
+
+/* Full-screen photo viewer (slideshow) */
+const photoViewer = document.getElementById('photoViewer');
+
+function openViewer(index) {
+  currentPhotoIndex = index;
+  showViewerPhoto();
+  photoViewer.classList.add('open');
+}
+
+function showViewerPhoto() {
+  const photo = currentPhotoList[currentPhotoIndex];
+  document.getElementById('viewerImg').src = photo.src;
+  document.getElementById('viewerCaption').textContent = photo.label;
+  document.getElementById('viewerCounter').textContent = `${currentPhotoIndex + 1} / ${currentPhotoList.length}`;
+}
+
+function viewerNext() {
+  currentPhotoIndex = (currentPhotoIndex + 1) % currentPhotoList.length;
+  showViewerPhoto();
+}
+
+function viewerPrev() {
+  currentPhotoIndex = (currentPhotoIndex - 1 + currentPhotoList.length) % currentPhotoList.length;
+  showViewerPhoto();
+}
+
+function closeViewer() {
+  photoViewer.classList.remove('open');
+}
+
+document.getElementById('viewerClose').addEventListener('click', closeViewer);
+document.getElementById('viewerNext').addEventListener('click', viewerNext);
+document.getElementById('viewerPrev').addEventListener('click', viewerPrev);
+photoViewer.addEventListener('click', (e) => { if (e.target === photoViewer) closeViewer(); });
+
+document.addEventListener('keydown', (e) => {
+  if (!photoViewer.classList.contains('open')) return;
+  if (e.key === 'Escape') closeViewer();
+  if (e.key === 'ArrowRight') viewerNext();
+  if (e.key === 'ArrowLeft') viewerPrev();
+});
 
 document.querySelectorAll('.filter-tag').forEach(tag => {
   tag.addEventListener('click', () => {
