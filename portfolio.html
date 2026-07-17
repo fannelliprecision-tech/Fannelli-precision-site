@@ -21,7 +21,8 @@
 
   header{ position:sticky; top:0; z-index:50; background:rgba(254,246,228,0.95); backdrop-filter:blur(6px); border-bottom:1px solid rgba(10,13,6,0.08); }
   .header-inner{ display:flex; align-items:center; justify-content:space-between; padding:14px 0; }
-  .brand-link{ display:flex; align-items:center; gap:12px; }
+  .brand-link{ display:flex; flex-direction:column; align-items:flex-start; gap:4px; }
+  .wordmark-img{ height: 26px; width:auto; display:block; }
   .logo-mark{ width:36px; height:36px; flex-shrink:0; object-fit: contain; }
   .brand-text{ display:flex; flex-direction:column; line-height:1.25; }
   .brand-name{ font-family:'Fraunces',serif; font-weight:500; font-size:17px; letter-spacing:.01em; }
@@ -172,9 +173,8 @@
 <header>
   <div class="wrap header-inner">
     <a class="brand-link" href="index.html">
-      <img class="logo-mark" src="logo.png" alt="Fannelli Precision logo" onerror="this.src='favicon-32.png'">
       <div class="brand-text">
-        <span class="brand-name">Fannelli Precision</span>
+        <img class="wordmark-img" src="wordmark.png" alt="Fannelli Precision">
         <span class="brand-sub">Commercial &amp; Residential General Contracting</span>
       </div>
     </a>
@@ -205,6 +205,8 @@
   <div class="filter-row" id="filterRow">
     <button class="filter-tag active" data-filter="all">All</button>
     <button class="filter-tag" data-filter="Bathroom Remodel">Bathroom Remodel</button>
+    <button class="filter-tag" data-filter="Bathroom">Bathroom</button>
+    <button class="filter-tag" data-filter="Recaulking">Recaulking</button>
     <button class="filter-tag" data-filter="Tub Replacement">Tub Replacement</button>
     <button class="filter-tag" data-filter="Tub Reglazing">Tub Reglazing</button>
     <button class="filter-tag" data-filter="Tiling">Tiling</button>
@@ -426,11 +428,20 @@ const projects = [
   },
   {
     tags: ["Siding Repair", "Exterior Repair"],
-    title: "Siding Repair",
+    title: "Electrical Box Fastening / Siding Repair",
     partOf: null,
     before: ["siding-before.jpg"],
     after: ["siding-after.jpg"],
-    during: ["siding-during-1.jpg"],
+    during: [],
+    video: null
+  },
+  {
+    tags: ["Recaulking", "Bathroom"],
+    title: "Bathroom Recaulking",
+    partOf: null,
+    before: ["recaulk-before-1.jpg", "recaulk-before-2.jpg", "recaulk-before-3.jpg"],
+    after: ["recaulk-after-1.jpg", "recaulk-after-2.jpg", "recaulk-after-3.jpg"],
+    during: [],
     video: null
   },
   {
